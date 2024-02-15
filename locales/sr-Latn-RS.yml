@@ -1,0 +1,13 @@
+button:
+  about: O nama
+  back: Nazad
+  go: Idi
+  home: Početna stranica
+  toggle_dark: Omogućite tamni režim
+  toggle_langs: Promeni jezik
+intro:
+  desc: Vite šablon za samopokretanje
+  dynamic-route: Demo dinamičke rute
+  hi: Zdravo, {name}!
+  whats-your-name: Kako se zoveš?
+not-found: Nije pronađen
