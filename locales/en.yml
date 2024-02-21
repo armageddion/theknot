@@ -7,8 +7,8 @@ button:
   toggle_langs: Change languages
 intro:
   title: The Knot
-  where: Where
-  when: When
-  give: Give
+  where: The Where
+  when: The When
+  give: The Give
   end: The End
 not-found: Not found

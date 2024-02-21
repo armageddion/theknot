@@ -7,27 +7,28 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div flex-center min-h-screen py-4>
+  <div min-h-screen flex-center py-4>
     <h1 text-xl font-bold>
       {{ t('intro.title') }}
     </h1>
+    <TheRing absolute-center top="[40%]" />
   </div>
-  <div flex-center min-h-screen py-4>
+  <div min-h-screen flex-center py-4>
     <h1 text-xl font-bold>
       {{ t('intro.where') }}
     </h1>
   </div>
-  <div flex-center min-h-screen py-4>
+  <div min-h-screen flex-center py-4>
     <h1 text-xl font-bold>
       {{ t('intro.when') }}
     </h1>
   </div>
-  <div flex-center min-h-screen py-4>
+  <div min-h-screen flex-center py-4>
     <h1 text-xl font-bold>
       {{ t('intro.give') }}
     </h1>
   </div>
-  <footer py-12>
+  <footer flex-center py-12>
     <h1 text-xl font-bold>
       {{ t('intro.end') }}
     </h1>
