@@ -12,3 +12,7 @@ intro:
   give: The Give
   end: The End
 not-found: Not found
+count:
+  pre: Wedding in
+  days: days
+  h: h

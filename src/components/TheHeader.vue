@@ -14,8 +14,12 @@ async function toggleLocales() {
 <template>
   <nav
     flex="~ gap-4"
-    fixed left-0 right-0 top-0 mb-8 justify-end px-8 py-4 text-xl
+    fixed left-0 right-0 top-0 mb-8 px-8 py-4 text-xl
   >
+    <TheCountdown />
+
+    <span flex-auto />
+
     <button icon-btn :title="t('button.toggle_dark')" @click="toggleDark()">
       <div i="carbon-sun dark:carbon-moon" />
     </button>

@@ -12,3 +12,7 @@ intro:
   give: The Daj
   end: The Kraj
 not-found: Nepostojeća stranica
+count:
+  pre: Svadba za
+  days: dana
+  h: č
