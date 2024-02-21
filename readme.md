@@ -1,1 +1,4 @@
-Making a quick and dirty counter page while folks wait
+```bash
+npm install
+npm run dev
+```
