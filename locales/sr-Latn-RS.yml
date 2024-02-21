@@ -1,13 +1,14 @@
 button:
-  about: O nama
+  about: Uh oh
   back: Nazad
-  go: Idi
+  go: Idemo
   home: Početna stranica
-  toggle_dark: Omogućite tamni režim
+  toggle_dark: Omogući tamni režim
   toggle_langs: Promeni jezik
 intro:
-  desc: Vite šablon za samopokretanje
-  dynamic-route: Demo dinamičke rute
-  hi: Zdravo, {name}!
-  whats-your-name: Kako se zoveš?
-not-found: Nije pronađen
+  title: Venčanje
+  where: Gde
+  when: Kada
+  give: Daj
+  end: Kraj
+not-found: Nepostojeća stranica

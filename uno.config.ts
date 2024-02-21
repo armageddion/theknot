@@ -11,6 +11,7 @@ import {
 
 export default defineConfig({
   shortcuts: [
+    ['flex-center', 'flex items-center justify-center'],
     ['btn', 'px-4 py-1 rounded inline-block bg-teal-700 text-white cursor-pointer !outline-none hover:bg-teal-800 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
     ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
   ],
@@ -23,9 +24,7 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        sans: 'DM Sans',
-        serif: 'DM Serif Display',
-        mono: 'DM Mono',
+        sans: 'Oxanium',
       },
     }),
   ],
@@ -34,4 +33,25 @@ export default defineConfig({
     transformerVariantGroup(),
   ],
   safelist: 'prose m-auto text-left'.split(' '),
+  theme: {
+    fontFamily: {
+      h: 'Audimat',
+    },
+  },
+  preflights: [
+    {
+      getCSS() {
+        return `@font-face {
+          font-family: 'Audimat';
+          font-style: normal;
+          font-weight: normal;
+          src: url('/fonts/audimat.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/audimat.woff2') format('woff2'),
+            url('/fonts/audimat.woff') format('woff'),
+            url('/fonts/audimat.ttf') format('truetype'),
+            url('/fonts/audimat.svg#audimat_monolight') format('svg');
+        }`
+      },
+    },
+  ],
 })
