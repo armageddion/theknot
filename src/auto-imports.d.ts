@@ -34,8 +34,36 @@ declare global {
   const defineLoader: typeof import('vue-router/auto')['defineLoader']
   const definePage: typeof import('unplugin-vue-router/runtime')['_definePage']
   const eagerComputed: typeof import('@vueuse/core')['eagerComputed']
-  const easeOutBounce: typeof import('./utils/svg')['easeOutBounce']
-  const easeOutElastic: typeof import('./utils/svg')['easeOutElastic']
+  const easeInBack: typeof import('./utils/easing')['easeInBack']
+  const easeInBounce: typeof import('./utils/easing')['easeInBounce']
+  const easeInCirc: typeof import('./utils/easing')['easeInCirc']
+  const easeInCubic: typeof import('./utils/easing')['easeInCubic']
+  const easeInElastic: typeof import('./utils/easing')['easeInElastic']
+  const easeInExpo: typeof import('./utils/easing')['easeInExpo']
+  const easeInOutBack: typeof import('./utils/easing')['easeInOutBack']
+  const easeInOutBounce: typeof import('./utils/easing')['easeInOutBounce']
+  const easeInOutCirc: typeof import('./utils/easing')['easeInOutCirc']
+  const easeInOutCubic: typeof import('./utils/easing')['easeInOutCubic']
+  const easeInOutElastic: typeof import('./utils/easing')['easeInOutElastic']
+  const easeInOutExpo: typeof import('./utils/easing')['easeInOutExpo']
+  const easeInOutQuad: typeof import('./utils/easing')['easeInOutQuad']
+  const easeInOutQuart: typeof import('./utils/easing')['easeInOutQuart']
+  const easeInOutQuint: typeof import('./utils/easing')['easeInOutQuint']
+  const easeInOutSine: typeof import('./utils/easing')['easeInOutSine']
+  const easeInQuad: typeof import('./utils/easing')['easeInQuad']
+  const easeInQuart: typeof import('./utils/easing')['easeInQuart']
+  const easeInQuint: typeof import('./utils/easing')['easeInQuint']
+  const easeInSine: typeof import('./utils/easing')['easeInSine']
+  const easeOutBack: typeof import('./utils/easing')['easeOutBack']
+  const easeOutBounce: typeof import('./utils/easing')['easeOutBounce']
+  const easeOutCirc: typeof import('./utils/easing')['easeOutCirc']
+  const easeOutCubic: typeof import('./utils/easing')['easeOutCubic']
+  const easeOutElastic: typeof import('./utils/easing')['easeOutElastic']
+  const easeOutExpo: typeof import('./utils/easing')['easeOutExpo']
+  const easeOutQuad: typeof import('./utils/easing')['easeOutQuad']
+  const easeOutQuart: typeof import('./utils/easing')['easeOutQuart']
+  const easeOutQuint: typeof import('./utils/easing')['easeOutQuint']
+  const easeOutSine: typeof import('./utils/easing')['easeOutSine']
   const effectScope: typeof import('vue')['effectScope']
   const extendRef: typeof import('@vueuse/core')['extendRef']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
@@ -50,6 +78,7 @@ declare global {
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
+  const linear: typeof import('./utils/easing')['linear']
   const makeDestructurable: typeof import('@vueuse/core')['makeDestructurable']
   const markRaw: typeof import('vue')['markRaw']
   const nextTick: typeof import('vue')['nextTick']
@@ -77,6 +106,7 @@ declare global {
   const provide: typeof import('vue')['provide']
   const provideLocal: typeof import('@vueuse/core')['provideLocal']
   const radToCirc: typeof import('./utils/svg')['radToCirc']
+  const rand: typeof import('./utils/svg')['rand']
   const reactify: typeof import('@vueuse/core')['reactify']
   const reactifyObject: typeof import('@vueuse/core')['reactifyObject']
   const reactive: typeof import('vue')['reactive']
@@ -98,6 +128,7 @@ declare global {
   const shallowReadonly: typeof import('vue')['shallowReadonly']
   const shallowRef: typeof import('vue')['shallowRef']
   const strokeDashArray: typeof import('./utils/svg')['strokeDashArray']
+  const svgCircleStroke: typeof import('./utils/svg')['svgCircleStroke']
   const syncRef: typeof import('@vueuse/core')['syncRef']
   const syncRefs: typeof import('@vueuse/core')['syncRefs']
   const templateRef: typeof import('@vueuse/core')['templateRef']
@@ -314,7 +345,6 @@ declare module 'vue' {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
-    readonly basicAttrs: UnwrapRef<typeof import('./utils/svg')['basicAttrs']>
     readonly circToRad: UnwrapRef<typeof import('./utils/svg')['circToRad']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly computedAsync: UnwrapRef<typeof import('@vueuse/core')['computedAsync']>
@@ -340,8 +370,36 @@ declare module 'vue' {
     readonly defineLoader: UnwrapRef<typeof import('vue-router/auto')['defineLoader']>
     readonly definePage: UnwrapRef<typeof import('unplugin-vue-router/runtime')['_definePage']>
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
-    readonly easeOutBounce: UnwrapRef<typeof import('./utils/svg')['easeOutBounce']>
-    readonly easeOutElastic: UnwrapRef<typeof import('./utils/svg')['easeOutElastic']>
+    readonly easeInBack: UnwrapRef<typeof import('./utils/easing')['easeInBack']>
+    readonly easeInBounce: UnwrapRef<typeof import('./utils/easing')['easeInBounce']>
+    readonly easeInCirc: UnwrapRef<typeof import('./utils/easing')['easeInCirc']>
+    readonly easeInCubic: UnwrapRef<typeof import('./utils/easing')['easeInCubic']>
+    readonly easeInElastic: UnwrapRef<typeof import('./utils/easing')['easeInElastic']>
+    readonly easeInExpo: UnwrapRef<typeof import('./utils/easing')['easeInExpo']>
+    readonly easeInOutBack: UnwrapRef<typeof import('./utils/easing')['easeInOutBack']>
+    readonly easeInOutBounce: UnwrapRef<typeof import('./utils/easing')['easeInOutBounce']>
+    readonly easeInOutCirc: UnwrapRef<typeof import('./utils/easing')['easeInOutCirc']>
+    readonly easeInOutCubic: UnwrapRef<typeof import('./utils/easing')['easeInOutCubic']>
+    readonly easeInOutElastic: UnwrapRef<typeof import('./utils/easing')['easeInOutElastic']>
+    readonly easeInOutExpo: UnwrapRef<typeof import('./utils/easing')['easeInOutExpo']>
+    readonly easeInOutQuad: UnwrapRef<typeof import('./utils/easing')['easeInOutQuad']>
+    readonly easeInOutQuart: UnwrapRef<typeof import('./utils/easing')['easeInOutQuart']>
+    readonly easeInOutQuint: UnwrapRef<typeof import('./utils/easing')['easeInOutQuint']>
+    readonly easeInOutSine: UnwrapRef<typeof import('./utils/easing')['easeInOutSine']>
+    readonly easeInQuad: UnwrapRef<typeof import('./utils/easing')['easeInQuad']>
+    readonly easeInQuart: UnwrapRef<typeof import('./utils/easing')['easeInQuart']>
+    readonly easeInQuint: UnwrapRef<typeof import('./utils/easing')['easeInQuint']>
+    readonly easeInSine: UnwrapRef<typeof import('./utils/easing')['easeInSine']>
+    readonly easeOutBack: UnwrapRef<typeof import('./utils/easing')['easeOutBack']>
+    readonly easeOutBounce: UnwrapRef<typeof import('./utils/easing')['easeOutBounce']>
+    readonly easeOutCirc: UnwrapRef<typeof import('./utils/easing')['easeOutCirc']>
+    readonly easeOutCubic: UnwrapRef<typeof import('./utils/easing')['easeOutCubic']>
+    readonly easeOutElastic: UnwrapRef<typeof import('./utils/easing')['easeOutElastic']>
+    readonly easeOutExpo: UnwrapRef<typeof import('./utils/easing')['easeOutExpo']>
+    readonly easeOutQuad: UnwrapRef<typeof import('./utils/easing')['easeOutQuad']>
+    readonly easeOutQuart: UnwrapRef<typeof import('./utils/easing')['easeOutQuart']>
+    readonly easeOutQuint: UnwrapRef<typeof import('./utils/easing')['easeOutQuint']>
+    readonly easeOutSine: UnwrapRef<typeof import('./utils/easing')['easeOutSine']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
@@ -356,6 +414,7 @@ declare module 'vue' {
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly linear: UnwrapRef<typeof import('./utils/easing')['linear']>
     readonly makeDestructurable: UnwrapRef<typeof import('@vueuse/core')['makeDestructurable']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
@@ -383,6 +442,7 @@ declare module 'vue' {
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly provideLocal: UnwrapRef<typeof import('@vueuse/core')['provideLocal']>
     readonly radToCirc: UnwrapRef<typeof import('./utils/svg')['radToCirc']>
+    readonly rand: UnwrapRef<typeof import('./utils/svg')['rand']>
     readonly reactify: UnwrapRef<typeof import('@vueuse/core')['reactify']>
     readonly reactifyObject: UnwrapRef<typeof import('@vueuse/core')['reactifyObject']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
@@ -613,7 +673,6 @@ declare module '@vue/runtime-core' {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
-    readonly basicAttrs: UnwrapRef<typeof import('./utils/svg')['basicAttrs']>
     readonly circToRad: UnwrapRef<typeof import('./utils/svg')['circToRad']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly computedAsync: UnwrapRef<typeof import('@vueuse/core')['computedAsync']>
@@ -639,8 +698,36 @@ declare module '@vue/runtime-core' {
     readonly defineLoader: UnwrapRef<typeof import('vue-router/auto')['defineLoader']>
     readonly definePage: UnwrapRef<typeof import('unplugin-vue-router/runtime')['_definePage']>
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
-    readonly easeOutBounce: UnwrapRef<typeof import('./utils/svg')['easeOutBounce']>
-    readonly easeOutElastic: UnwrapRef<typeof import('./utils/svg')['easeOutElastic']>
+    readonly easeInBack: UnwrapRef<typeof import('./utils/easing')['easeInBack']>
+    readonly easeInBounce: UnwrapRef<typeof import('./utils/easing')['easeInBounce']>
+    readonly easeInCirc: UnwrapRef<typeof import('./utils/easing')['easeInCirc']>
+    readonly easeInCubic: UnwrapRef<typeof import('./utils/easing')['easeInCubic']>
+    readonly easeInElastic: UnwrapRef<typeof import('./utils/easing')['easeInElastic']>
+    readonly easeInExpo: UnwrapRef<typeof import('./utils/easing')['easeInExpo']>
+    readonly easeInOutBack: UnwrapRef<typeof import('./utils/easing')['easeInOutBack']>
+    readonly easeInOutBounce: UnwrapRef<typeof import('./utils/easing')['easeInOutBounce']>
+    readonly easeInOutCirc: UnwrapRef<typeof import('./utils/easing')['easeInOutCirc']>
+    readonly easeInOutCubic: UnwrapRef<typeof import('./utils/easing')['easeInOutCubic']>
+    readonly easeInOutElastic: UnwrapRef<typeof import('./utils/easing')['easeInOutElastic']>
+    readonly easeInOutExpo: UnwrapRef<typeof import('./utils/easing')['easeInOutExpo']>
+    readonly easeInOutQuad: UnwrapRef<typeof import('./utils/easing')['easeInOutQuad']>
+    readonly easeInOutQuart: UnwrapRef<typeof import('./utils/easing')['easeInOutQuart']>
+    readonly easeInOutQuint: UnwrapRef<typeof import('./utils/easing')['easeInOutQuint']>
+    readonly easeInOutSine: UnwrapRef<typeof import('./utils/easing')['easeInOutSine']>
+    readonly easeInQuad: UnwrapRef<typeof import('./utils/easing')['easeInQuad']>
+    readonly easeInQuart: UnwrapRef<typeof import('./utils/easing')['easeInQuart']>
+    readonly easeInQuint: UnwrapRef<typeof import('./utils/easing')['easeInQuint']>
+    readonly easeInSine: UnwrapRef<typeof import('./utils/easing')['easeInSine']>
+    readonly easeOutBack: UnwrapRef<typeof import('./utils/easing')['easeOutBack']>
+    readonly easeOutBounce: UnwrapRef<typeof import('./utils/easing')['easeOutBounce']>
+    readonly easeOutCirc: UnwrapRef<typeof import('./utils/easing')['easeOutCirc']>
+    readonly easeOutCubic: UnwrapRef<typeof import('./utils/easing')['easeOutCubic']>
+    readonly easeOutElastic: UnwrapRef<typeof import('./utils/easing')['easeOutElastic']>
+    readonly easeOutExpo: UnwrapRef<typeof import('./utils/easing')['easeOutExpo']>
+    readonly easeOutQuad: UnwrapRef<typeof import('./utils/easing')['easeOutQuad']>
+    readonly easeOutQuart: UnwrapRef<typeof import('./utils/easing')['easeOutQuart']>
+    readonly easeOutQuint: UnwrapRef<typeof import('./utils/easing')['easeOutQuint']>
+    readonly easeOutSine: UnwrapRef<typeof import('./utils/easing')['easeOutSine']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
@@ -655,6 +742,7 @@ declare module '@vue/runtime-core' {
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly linear: UnwrapRef<typeof import('./utils/easing')['linear']>
     readonly makeDestructurable: UnwrapRef<typeof import('@vueuse/core')['makeDestructurable']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
@@ -682,6 +770,7 @@ declare module '@vue/runtime-core' {
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly provideLocal: UnwrapRef<typeof import('@vueuse/core')['provideLocal']>
     readonly radToCirc: UnwrapRef<typeof import('./utils/svg')['radToCirc']>
+    readonly rand: UnwrapRef<typeof import('./utils/svg')['rand']>
     readonly reactify: UnwrapRef<typeof import('@vueuse/core')['reactify']>
     readonly reactifyObject: UnwrapRef<typeof import('@vueuse/core')['reactifyObject']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
