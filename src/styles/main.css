@@ -6,7 +6,12 @@ body,
   padding: 0;
 }
 
+html {
+  color: #000;
+}
+
 html.dark {
   background: #121212;
   color-scheme: dark;
+  color: #fff;
 }
