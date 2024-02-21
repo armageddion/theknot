@@ -1,14 +1,14 @@
 button:
-  about: About
+  about: Uh oh
   back: Back
   go: GO
   home: Home
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
 intro:
-  desc: Opinionated Vite Starter Template
-  dynamic-route: Demo of dynamic route
-  hi: Hi, {name}!
-  aka: Also known as
-  whats-your-name: What's your name?
+  title: The Knot
+  where: Where
+  when: When
+  give: Give
+  end: The End
 not-found: Not found
