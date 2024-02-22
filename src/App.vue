@@ -1,11 +1,12 @@
 <script setup lang="ts">
-// https://github.com/vueuse/head
+const { t } = useI18n()
+
 useHead({
-  title: 'Wedding',
+  title: () => t('meta.title'),
   meta: [
     {
       name: 'description',
-      content: 'Opinionated Vite Starter Template',
+      content: () => t('meta.description'),
     },
     {
       name: 'theme-color',
