@@ -25,7 +25,7 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        sans: 'Oxanium',
+        sans: 'Noto Sans',
       },
     }),
   ],

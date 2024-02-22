@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import RingCircle from './Circle.vue'
+
 const RAD = 50
 const CIRC = radToCirc(RAD)
 const duration = 800
@@ -9,19 +11,19 @@ const { state: transition, next: nextTransition } = useCycleList(transitionFns)
 
 // set up reactive ring values
 const base = {
-  dash: shallowRef(6),
   circ: shallowRef(CIRC),
-  rotate: shallowRef(-1 * rotatePx(CIRC, 6 / 2)),
+  rotate: shallowRef(0),
+  strokeWidth: shallowRef(6),
 }
-const rotate = useTransition(base.rotate, { duration, transition })
 const circ = useTransition(base.circ, { duration, transition })
-const dash = useTransition(base.dash, { duration, transition })
+const rotate = useTransition(base.rotate, { duration, transition })
+const strokeWidth = useTransition(base.strokeWidth, { duration, transition })
 
 // animate ring values
 const { pause, resume, isActive } = useIntervalFn(tick, duration * 1.5)
 function tick() {
   base.rotate.value = base.rotate.value + 90
-  base.dash.value = rand(12) + 4
+  base.strokeWidth.value = rand(12) + 4
   base.circ.value = (() => {
     const randNum = rand(16)
     const maybeNeg = randNum % 2 ? 1 : -1
@@ -39,25 +41,19 @@ defineRender(() => h('svg', {
   onClick: isActive.value ? pause : resume,
 }, [
   // static solid ring
-  h('circle', {
-    'cx': RAD,
-    'cy': RAD,
-    'r': RAD,
-    'stroke': isDark.value ? 'white' : 'black',
-    'stroke-width': 2,
+  h(RingCircle, {
+    rad: RAD,
+    circ: CIRC,
   }),
   // dynamic dashed ring
-  h('circle', {
-    'cx': RAD,
-    'cy': RAD,
-    'r': circToRad(unref(circ)),
-    'stroke': isDark.value ? 'white' : 'black',
-    'stroke-width': unref(dash),
-    'stroke-dasharray': strokeDashArray(circ, 4, 6),
-    'style': {
-      'transform-origin': 'center',
-      'transform': `rotate(${rotate.value}deg)`,
-    },
+  h(RingCircle, {
+    rad: RAD,
+    circ: circ.value,
+    rotate: rotate.value,
+    strokeWidth: strokeWidth.value,
+    dashCount: 4,
+    dashLength: 10,
+    dashCenter: true,
   }),
 ]))
 </script>

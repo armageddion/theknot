@@ -22,8 +22,8 @@ function update() {
   const pad = (n: number) => n.toString().padStart(2, '0')
   const daysLabel = `${days} ${t('count.days')}`
   const hoursLabel = `${pad(hours)}${t('count.h')}`
-  const minutesLabel = `${pad(minutes)}m`
-  const secondsLabel = `${pad(seconds)}s`
+  const minutesLabel = `${pad(minutes)}${t('count.m')}`
+  const secondsLabel = `${pad(seconds)}${t('count.s')}`
 
   countdown.value = `${daysLabel} ${hoursLabel} ${minutesLabel} ${secondsLabel}`
 }
