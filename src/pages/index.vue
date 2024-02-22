@@ -1,9 +1,19 @@
 <script setup lang="ts">
+import TheSlide from '~/components/TheSlide.vue'
+
 defineOptions({
   name: 'IndexPage',
 })
 
 const { t } = useI18n()
+const slide = ref<HTMLElement>()
+const { style } = useDraggable(slide, {
+  initialValue: { x: 80, y: 400 },
+  preventDefault: true,
+  stopPropagation: true,
+  capture: false,
+  containerElement: document.body,
+})
 </script>
 
 <template>
@@ -11,6 +21,14 @@ const { t } = useI18n()
     <h1 text-xl font-bold>
       {{ t('intro.title') }}
     </h1>
+    <div
+      ref="slide"
+      :style
+      absolute
+      select-none
+    >
+      <TheSlide w-xl />
+    </div>
     <div absolute-center top="[30%]">
       <TheRing />
     </div>

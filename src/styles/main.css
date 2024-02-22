@@ -15,3 +15,7 @@ html.dark {
   color-scheme: dark;
   color: #fff;
 }
+
+a {
+  cursor: pointer;
+}
