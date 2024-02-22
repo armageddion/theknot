@@ -1,0 +1,23 @@
+meta:
+  title: Литтл31 Свадба
+  description: Сви детаљи који су вам потребни и неки који нису
+button:
+  about: Уф
+  back: Назад
+  go: Идемо
+  home: Почетна страница
+  toggle_dark: Омогући тамни режим
+  toggle_langs: Промени језик
+intro:
+  title: Тхе Чвор
+  where: Тхе Где
+  when: Тхе Када
+  give: Тхе Дај
+  end: Тхе Крај
+not-found: Непостојећа страница
+count:
+  pre: Свадба за
+  days: дана
+  h: ч
+  m: м
+  s: с
