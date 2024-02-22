@@ -21,15 +21,14 @@ const dash = useTransition(base.dash, { duration, transition })
 const { pause, resume, isActive } = useIntervalFn(tick, duration * 1.5)
 function tick() {
   base.rotate.value = base.rotate.value + 90
-  base.circ.value = randomCirc()
   base.dash.value = rand(12) + 4
+  base.circ.value = (() => {
+    const randNum = rand(16)
+    const maybeNeg = randNum % 2 ? 1 : -1
+    const randSize = randNum * maybeNeg + RAD
+    return radToCirc(randSize)
+  })()
   nextTransition()
-}
-function randomCirc() {
-  const randNum = rand(16)
-  const maybeNeg = randNum % 2 ? 1 : -1
-  const randSize = randNum * maybeNeg + RAD
-  return radToCirc(randSize)
 }
 
 defineRender(() => h('svg', {

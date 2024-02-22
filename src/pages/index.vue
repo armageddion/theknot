@@ -11,7 +11,7 @@ const { t } = useI18n()
     <h1 text-xl font-bold>
       {{ t('intro.title') }}
     </h1>
-    <div absolute-center top="[40%]">
+    <div absolute-center top="[30%]">
       <TheRing />
     </div>
   </section>
