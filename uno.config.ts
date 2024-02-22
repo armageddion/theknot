@@ -33,25 +33,4 @@ export default defineConfig({
     transformerDirectives(),
     transformerVariantGroup(),
   ],
-  theme: {
-    fontFamily: {
-      h: 'Audimat',
-    },
-  },
-  preflights: [
-    {
-      getCSS() {
-        return `@font-face {
-          font-family: 'Audimat';
-          font-style: normal;
-          font-weight: normal;
-          src: url('/fonts/audimat.eot?#iefix') format('embedded-opentype'),
-            url('/fonts/audimat.woff2') format('woff2'),
-            url('/fonts/audimat.woff') format('woff'),
-            url('/fonts/audimat.ttf') format('truetype'),
-            url('/fonts/audimat.svg#audimat_monolight') format('svg');
-        }`
-      },
-    },
-  ],
 })
