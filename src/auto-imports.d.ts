@@ -33,6 +33,7 @@ declare global {
   const defineComponent: typeof import('vue')['defineComponent']
   const defineLoader: typeof import('vue-router/auto')['defineLoader']
   const definePage: typeof import('unplugin-vue-router/runtime')['_definePage']
+  const degToCirc: typeof import('./utils/svg')['degToCirc']
   const eagerComputed: typeof import('@vueuse/core')['eagerComputed']
   const easeInBack: typeof import('./utils/easing')['easeInBack']
   const easeInBounce: typeof import('./utils/easing')['easeInBounce']
@@ -369,6 +370,7 @@ declare module 'vue' {
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly defineLoader: UnwrapRef<typeof import('vue-router/auto')['defineLoader']>
     readonly definePage: UnwrapRef<typeof import('unplugin-vue-router/runtime')['_definePage']>
+    readonly degToCirc: UnwrapRef<typeof import('./utils/svg')['degToCirc']>
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
     readonly easeInBack: UnwrapRef<typeof import('./utils/easing')['easeInBack']>
     readonly easeInBounce: UnwrapRef<typeof import('./utils/easing')['easeInBounce']>
@@ -696,6 +698,7 @@ declare module '@vue/runtime-core' {
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly defineLoader: UnwrapRef<typeof import('vue-router/auto')['defineLoader']>
     readonly definePage: UnwrapRef<typeof import('unplugin-vue-router/runtime')['_definePage']>
+    readonly degToCirc: UnwrapRef<typeof import('./utils/svg')['degToCirc']>
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
     readonly easeInBack: UnwrapRef<typeof import('./utils/easing')['easeInBack']>
     readonly easeInBounce: UnwrapRef<typeof import('./utils/easing')['easeInBounce']>

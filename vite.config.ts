@@ -63,6 +63,8 @@ export default defineConfig({
     // https://github.com/antfu/unplugin-vue-components
     Components({
       dts: 'src/components.d.ts',
+      directoryAsNamespace: true,
+      collapseSamePrefixes: true,
     }),
 
     // https://github.com/antfu/unocss

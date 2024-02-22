@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TheSlide from '~/components/TheSlide.vue'
+import TheSlide from '~/components/The/Slide.vue'
 
 defineOptions({
   name: 'IndexPage',
@@ -30,7 +30,9 @@ const { style } = useDraggable(slide, {
       <TheSlide w-xl />
     </div>
     <div absolute-center top="[30%]">
-      <TheRing />
+      <RouterLink to="/rings">
+        <RingOne />
+      </RouterLink>
     </div>
   </section>
   <section min-h-screen flex-center>
