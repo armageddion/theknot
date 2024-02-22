@@ -19,3 +19,5 @@ count:
   pre: Wedding in
   days: days
   h: h
+  m: m
+  s: s

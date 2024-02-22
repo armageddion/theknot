@@ -6,7 +6,7 @@ button:
   back: Nazad
   go: Idemo
   home: Početna stranica
-  toggle_dark: Omogući tamni režim
+  toggle_dark: Omogući tamni režim
   toggle_langs: Promeni jezik
 intro:
   title: The Čvor
@@ -14,8 +14,10 @@ intro:
   when: The Kada
   give: The Daj
   end: The Kraj
-not-found: Nepostojeća stranica
+not-found: Nepostojeća stranica
 count:
   pre: Svadba za
   days: dana
   h: č
+  m: m
+  s: s
