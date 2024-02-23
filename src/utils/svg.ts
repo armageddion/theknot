@@ -1,4 +1,16 @@
 import type { MaybeRef } from 'vue'
+import type { CircleProps } from '~/components/Ring/Circle.vue'
+
+export const circleDefaults: CircleProps = {
+  rad: 50,
+  circ: radToCirc(50),
+  rotate: 0,
+  strokeWidth: 2,
+  dashCount: 0,
+  dashLength: 0,
+  dashCenter: true,
+  dashInvert: false,
+}
 
 export function rand(max: number) {
   return Math.floor(Math.random() * max)

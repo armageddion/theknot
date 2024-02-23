@@ -10,6 +10,7 @@ declare global {
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
   const basicAttrs: typeof import('./utils/svg')['basicAttrs']
   const circToRad: typeof import('./utils/svg')['circToRad']
+  const circleDefaults: typeof import('./utils/svg')['circleDefaults']
   const computed: typeof import('vue')['computed']
   const computedAsync: typeof import('@vueuse/core')['computedAsync']
   const computedEager: typeof import('@vueuse/core')['computedEager']
@@ -347,6 +348,7 @@ declare module 'vue' {
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly circToRad: UnwrapRef<typeof import('./utils/svg')['circToRad']>
+    readonly circleDefaults: UnwrapRef<typeof import('./utils/svg')['circleDefaults']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly computedAsync: UnwrapRef<typeof import('@vueuse/core')['computedAsync']>
     readonly computedEager: UnwrapRef<typeof import('@vueuse/core')['computedEager']>
@@ -675,6 +677,7 @@ declare module '@vue/runtime-core' {
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly circToRad: UnwrapRef<typeof import('./utils/svg')['circToRad']>
+    readonly circleDefaults: UnwrapRef<typeof import('./utils/svg')['circleDefaults']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly computedAsync: UnwrapRef<typeof import('@vueuse/core')['computedAsync']>
     readonly computedEager: UnwrapRef<typeof import('@vueuse/core')['computedEager']>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 export interface CircleProps {
-  rad: number
+  rad?: number
   circ?: number
   rotate?: number
   strokeWidth?: number
@@ -10,15 +10,7 @@ export interface CircleProps {
   dashInvert?: boolean
 }
 
-const props = withDefaults(defineProps<CircleProps>(), {
-  circ: radToCirc(50),
-  rotate: 0,
-  strokeWidth: 2,
-  dashCount: 0,
-  dashLength: 0,
-  dashCenter: true,
-  dashInvert: false,
-})
+const props = withDefaults(defineProps<CircleProps>(), circleDefaults)
 
 const offset = computed(() => {
   const resetOffset = -90 // reset to top (default starts at 3 o'clock...)
