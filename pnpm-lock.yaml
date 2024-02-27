@@ -115,6 +115,9 @@ devDependencies:
   vue-tsc:
     specifier: ^1.8.27
     version: 1.8.27(typescript@5.3.3)
+  yaml:
+    specifier: ^2.4.0
+    version: 2.4.0
 
 packages:
 
@@ -8669,7 +8672,7 @@ packages:
       scule: 1.1.1
       unplugin: 1.6.0
       vue-router: 4.2.5(vue@3.4.19)
-      yaml: 2.3.4
+      yaml: 2.4.0
     transitivePeerDependencies:
       - rollup
       - vue
@@ -9443,12 +9446,13 @@ packages:
     dependencies:
       eslint-visitor-keys: 3.4.3
       lodash: 4.17.21
-      yaml: 2.3.4
+      yaml: 2.4.0
     dev: true
 
-  /yaml@2.3.4:
-    resolution: {integrity: sha512-8aAvwVUSHpfEqTQ4w/KMlf3HcRdt50E5ODIQJBw1fQ5RL34xabzxtUlzTXVqc4rkZsPbvrXKWnABCD7kWSmocA==}
+  /yaml@2.4.0:
+    resolution: {integrity: sha512-j9iR8g+/t0lArF4V6NE/QCfT+CO7iLqrXAHZbJdo+LfjqP1vR8Fg5bSiaq6Q2lOD1AUEVrEVIgABvBFYojJVYQ==}
     engines: {node: '>= 14'}
+    hasBin: true
     dev: true
 
   /yargs-parser@21.1.1:
