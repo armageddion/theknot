@@ -21,3 +21,57 @@ count:
   h: h
   m: m
   s: s
+where:
+  title: Welcome, but where?
+  description: >-
+    Leave the city via the bridge nearest to the fortress. Follow the road for
+    quite a while. Avoid the trap in Petrovaradin of turning right-ish towards
+    Ruma/Beocin. Go more straight... When you see a Russian church on the left,
+    turn right. Keep right at the big cross. When you see signs for “Velika
+    Remeta” follow them.. When you can no longer see these signs, look for
+    signs for “Uvac”. When you get to “Uvac”, take a gulp or a sip and a
+    breath.. From here, follow the noise..
+
+    ....or just use navigation...
+links:
+    gpx: GPX
+    gmaps: GMaps
+when:
+  title: When to come and leave
+  description: >-
+    If you are capable of physical effort, congratulations! You are on build
+    crew. You are expected at 1400h.
+
+    If you don’t do manual labor or just want free booze and food, be there at
+    1600h.
+
+    To find out when you have to leave, enter you age into the above equation
+    and do some maths.
+
+    Note: we’ll be about half an hour from the city... if you get drunk, get
+    someone else to take you home.
+what:
+  title: What not to bring
+  description: >-
+    This wedding is in a forest, under the open skies. Be prepared for all the
+    things you may expect from a typical forest. There may be mud or even rain.
+    It might get dark after sun goes down...
+
+    Our warm recommendations are to not bring the following items:
+    - skis
+    - high heels
+    - personal vehicle
+    - two romantic partners
+    - food
+    - drink
+    - diving equipment
+gift:
+  title: We dont need a toaster.
+  description: >-
+    We intend to remember this day for the rest of time, or at least, our
+    lives. If you insist on gifting something that might help us remember this
+    day for a long time to come, do feel encouraged. If, however, you feel like
+    bribing us to turn the other cheek to the fact that you haven’t brought a
+    thoughtful gift will win you some good graces, you can use the helpful
+    Venmo link to make your contribution; or, if you are a dinosaur, we will
+    accept that archaic ritual of gifting a paper envelope.
