@@ -1,3 +1,17 @@
+:root,
+html.dark {
+  --color-primary: oklch(40.53% 0.11 137.58);
+  --color-secondary: oklch(34.57% 0.1 25.99);
+  --color-accent: oklch(76.41% 0.142 92.54);
+}
+
+:root,
+html.light {
+  --color-primary: oklch(40.53% 0.11 137.58);
+  --color-secondary: oklch(30.57% 0.1 25.99);
+  --color-accent: oklch(58.53% 0.12 96.35);
+}
+
 html,
 body,
 #app {
@@ -11,9 +25,19 @@ html {
 }
 
 html.dark {
-  background: #121212;
   color-scheme: dark;
+  background: #222;
+  background: color-mix(in oklab, var(--color-primary), #222222 80%);
   color: #fff;
+  color: color-mix(in oklab, var(--color-accent), #fff 80%);
+}
+
+html.light {
+  color-scheme: light;
+  background: #222;
+  background: color-mix(in oklab, var(--color-primary), #fff 60%);
+  color: #fff;
+  color: color-mix(in oklab, var(--color-accent), #000 60%);
 }
 
 a {

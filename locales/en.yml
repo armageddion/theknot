@@ -6,8 +6,8 @@ meta:
 not-found: Not found
 button:
   toggle_dark_on: Dark mode
-  toggle_dark_off: Dark mode
-  toggle_langs: Change languages
+  toggle_dark_off: Light mode
+  toggle_langs: Change language
 where:
   title: Welcome, but where?
   description: |
