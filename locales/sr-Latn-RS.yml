@@ -1,35 +1,22 @@
 meta:
-  title: Littl31 Svadba
-  description: Svi detalji koji su vam potrebni i neki koji nisu
-button:
-  about: Uh oh
-  back: Nazad
-  go: Idemo
-  home: Početna stranica
-  toggle_dark: Omogući tamni režim
-  toggle_langs: Promeni jezik
-intro:
-  title: The Čvor
-  where: The Gde
-  when: The Kada
-  give: The Daj
-  end: The Kraj
+  title: The Littl3 Knot
+  description: >
+    Sve što nikada niste znali da niste morali da znate, pa čak i nešto što je
+    verovatno neophodno.
 not-found: Nepostojeća stranica
-count:
-  pre: Svadba za
-  days: dana
-  h: č
-  m: m
-  s: s
+button:
+  toggle_dark_on: Potamni
+  toggle_dark_off: Posvetli
+  toggle_langs: Promeni jezik
 where:
   title: Welcome, but where?
-  description: >-
+  description: |
     Napustite grad putem duge. Dalje nastavite pravo neko vreme. Nemojte da
-    napravite grešku u Petrovaradinu i skrenete desno prema Rumi/Beočinu. Natavite
-    jos malo pravo. Kad stignete do ruske crkve, skrenite desno. Kod velikog krsta,
-    držite se desno. Odatle pratite putokaze za Veliku Remetu. Kada ti znaci
-    prestanu, pratite znake za izvor Uvac. Na izvoru popite gutljaj ili dva,
-    udahnite duboko i dalje pratite buku.
+    napravite grešku u Petrovaradinu i skrenete desno prema Rumi/Beočinu.
+    Natavite jos malo pravo. Kad stignete do ruske crkve, skrenite desno. Kod
+    velikog krsta, držite se desno. Odatle pratite putokaze za Veliku Remetu.
+    Kada ti znaci prestanu, pratite znake za izvor Uvac. Na izvoru popite
+    gutljaj ili dva, udahnite duboko i dalje pratite buku.
 
     ...ili samo koristite navigaciju...
   links:
@@ -37,19 +24,20 @@ where:
     gmaps: GMaps
 when:
   title: When to come and leave
-  description: >-
-    Ako ste sposobni za fizički napor, čestitamo! Vi ste na timu koji ce nam pomoći
-    da se sve postavi i očekujemo vas u 1400h.
+  description: |
+    Ako ste sposobni za fizički napor, čestitamo! Vi ste na timu koji ce nam
+    pomoći da se sve postavi i očekujemo vas u 1400h.
 
     Ako niste sposobni ili samo želite da se provedete dođite u 1600h.
 
-    Ako želite da znate kada očekujemo da odete, morate da znate kompleksnu matematiku.
+    Ako želite da znate kada očekujemo da odete, morate da znate kompleksnu
+    matematiku.
 
-    Vazno: bićemo na oko pola sata od grada... ako se napijete, nađite nekog da vas
-    vrati kući.
+    Vazno: bićemo na oko pola sata od grada... ako se napijete, nađite nekog da
+    vas vrati kući.
 what:
   title: What not to bring
-  description: >-
+  description: |
     Ova svadba je u šumi, na otvorenom. Budite spremni na sve što mozete da
     ocekujete od tipicne sume. Moze da se desi da bude blata ili da padne kisa.
     Mozda cak i padne mrak..
@@ -65,10 +53,11 @@ what:
     - opremu za ronjenje
 gift:
   title: Ne treba nam toster.
-  description: >-
+  description: |
     Mi zelimo i planiramo da pamtimo ovaj dan do kraja vremena, ili barem nasih
-    zivota. Ako insistirate da nam poklonite nesto sto bi nam pomoglo da upamtimo
-    ovaj dan, osecajte se orhabrenim. Ako, ipak, racunate da mozete da nas
-    podmitite da ignorisemo cinjenicu da nam niste doneli promisljen poklon, mozete
-    da koristite ovaj venmo link za vas doprinos; ili ako ste dinosaurus,
-    prihvaticemo i onaj arhaicni ritual koji je vezan za papirnu koveru
+    zivota. Ako insistirate da nam poklonite nesto sto bi nam pomoglo da
+    upamtimo ovaj dan, osecajte se orhabrenim. Ako, ipak, racunate da mozete da
+    nas podmitite da ignorisemo cinjenicu da nam niste doneli promisljen
+    poklon, mozete da koristite ovaj venmo link za vas doprinos; ili ako ste
+    dinosaurus, prihvaticemo i onaj arhaicni ritual koji je vezan za papirnu
+    koveru
