@@ -9,7 +9,7 @@ button:
   toggle_dark_off: Posvetli
   toggle_langs: Promeni jezik
 where:
-  title: Welcome, but where?
+  title: Dobro došli ali gde?
   description: |
     Napustite grad putem duge. Dalje nastavite pravo neko vreme. Nemojte da
     napravite grešku u Petrovaradinu i skrenete desno prema Rumi/Beočinu.
@@ -23,41 +23,42 @@ where:
     gpx: GPX
     gmaps: GMaps
 when:
-  title: When to come and leave
+  title: Kada doći a kada otići?
   description: |
-    Ako ste sposobni za fizički napor, čestitamo! Vi ste na timu koji ce nam
-    pomoći da se sve postavi i očekujemo vas u 1400h.
+    Ako ste sposobni za fizički napor, čestitamo! Vi ste na timu koji će nam
+    pomoći da se sve postavi i očekujemo vas u 14h.
 
-    Ako niste sposobni ili samo želite da se provedete dođite u 1600h.
+    Ako niste sposobni ili samo želite da se provedete dođite u 16h.
 
     Ako želite da znate kada očekujemo da odete, morate da znate kompleksnu
     matematiku.
 
-    Vazno: bićemo na oko pola sata od grada... ako se napijete, nađite nekog da
+    Važno: bićemo na oko pola sata od grada... ako se napijete, nađite nekog da
     vas vrati kući.
 what:
-  title: What not to bring
+  title: Šta ne donositi?
   description: |
-    Ova svadba je u šumi, na otvorenom. Budite spremni na sve što mozete da
-    ocekujete od tipicne sume. Moze da se desi da bude blata ili da padne kisa.
-    Mozda cak i padne mrak..
+    Ova svadba je u šumi, na otvorenom. Budite spremni na sve što možete da
+    očekujete od tipične šume. Može da se desi da bude blata ili da padne kiša.
+    Možda čak i padne mrak..
 
     Naš topli savet je da ne donosite sledeće stvari:
 
     - skije
     - štikle
     - licno vozilo
-    - dva romanticna partnera
+    - dva romantična partnera
     - hranu
     - piće
     - opremu za ronjenje
 gift:
   title: Ne treba nam toster.
   description: |
-    Mi zelimo i planiramo da pamtimo ovaj dan do kraja vremena, ili barem nasih
-    zivota. Ako insistirate da nam poklonite nesto sto bi nam pomoglo da
-    upamtimo ovaj dan, osecajte se orhabrenim. Ako, ipak, racunate da mozete da
-    nas podmitite da ignorisemo cinjenicu da nam niste doneli promisljen
-    poklon, mozete da koristite ovaj venmo link za vas doprinos; ili ako ste
-    dinosaurus, prihvaticemo i onaj arhaicni ritual koji je vezan za papirnu
+    Mi želimo i planiramo da pamtimo ovaj dan do kraja vremena, ili barem nasiš
+    života. Ako insistirate da nam poklonite nešto što bi nam pomoglo da
+    upamtimo ovaj dan, osećajte se orhabrenim. Ako, ipak, računate da možete da
+    nas podmitite da ignorišemo činjenicu da nam niste doneli promišljen
+    poklon, možete da koristite ovaj venmo link za vaš doprinos; ili ako ste
+    dinosaurus, prihvatićemo i onaj arhaični ritual koji je vezan za papirnu
     koveru
+
