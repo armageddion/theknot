@@ -1,29 +1,16 @@
 meta:
-  title: Littl31 Wedding
-  description: All the details you need and some you don't
-button:
-  about: Uh oh
-  back: Back
-  go: GO
-  home: Home
-  toggle_dark: Toggle dark mode
-  toggle_langs: Change languages
-intro:
-  title: The Knot
-  where: The Where
-  when: The When
-  give: The Give
-  end: The End
+  title: The Littl3 Knot
+  description: >
+    Everything you never knew you didn’t need to know and even something that
+    is probably essential.
 not-found: Not found
-count:
-  pre: Wedding in
-  days: days
-  h: h
-  m: m
-  s: s
+button:
+  toggle_dark_on: Dark mode
+  toggle_dark_off: Dark mode
+  toggle_langs: Change languages
 where:
   title: Welcome, but where?
-  description: >-
+  description: |
     Leave the city via the bridge nearest to the fortress. Follow the road for
     quite a while. Avoid the trap in Petrovaradin of turning right-ish towards
     Ruma/Beocin. Go more straight... When you see a Russian church on the left,
@@ -38,7 +25,7 @@ links:
     gmaps: GMaps
 when:
   title: When to come and leave
-  description: >-
+  description: |
     If you are capable of physical effort, congratulations! You are on build
     crew. You are expected at 1400h.
 
@@ -52,7 +39,7 @@ when:
     someone else to take you home.
 what:
   title: What not to bring
-  description: >-
+  description: |
     This wedding is in a forest, under the open skies. Be prepared for all the
     things you may expect from a typical forest. There may be mud or even rain.
     It might get dark after sun goes down...
@@ -67,7 +54,7 @@ what:
     - diving equipment
 gift:
   title: We dont need a toaster.
-  description: >-
+  description: |
     We intend to remember this day for the rest of time, or at least, our
     lives. If you insist on gifting something that might help us remember this
     day for a long time to come, do feel encouraged. If, however, you feel like
