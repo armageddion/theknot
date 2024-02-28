@@ -23,11 +23,11 @@ async function toggleLocales() {
       :title="isDark ? t('button.toggle_dark_off') : t('button.toggle_dark_on')"
       @click="toggleDark()"
     >
-      <div i="carbon-sun dark:carbon-moon" />
+      <div i="ph-moon dark:ph-sun" />
     </button>
 
     <button icon-btn :title="t('button.toggle_langs')" @click="toggleLocales()">
-      <div i-carbon-language />
+      <div i-ph-translate />
     </button>
   </nav>
 </template>

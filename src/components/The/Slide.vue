@@ -25,7 +25,7 @@ const offset = useTransition(
     <!-- the play/pause -->
     <div absolute-center top-4 z-1 w-full flex-center>
       <button h-8 w-8 flex-center @click="isActive ? pause() : resume()">
-        <span text-lg :class="isActive ? 'i-carbon-pause-outline' : 'i-carbon-play-outline'" />
+        <span text-lg :class="isActive ? 'i-ph-pause-circle' : 'i-ph-play-circle'" />
       </button>
     </div>
 

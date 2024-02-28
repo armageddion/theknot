@@ -45,8 +45,8 @@ function toggleHide(i: number) {
       </legend>
       <span flex-auto />
       <button h-6 rounded bg-gray-600 px-2 @click="toggleHide(i)">
-        <div v-if="hiddenCircles.includes(i)" i-carbon-chevron-down />
-        <div v-else i-carbon-chevron-up />
+        <div v-if="hiddenCircles.includes(i)" i-ph-caret-down />
+        <div v-else i-ph-caret-up />
       </button>
       <button h-6 rounded bg-gray-600 px-4 text-white @click="$emit('delete')">
         Remove
