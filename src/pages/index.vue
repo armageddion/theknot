@@ -62,7 +62,7 @@ function initGsapScroll() {
           scrub: true,
         },
       })
-      .fromTo(item.querySelector('div'), {
+      .fromTo(item.querySelector('a'), {
         scale: 0,
         transformOrigin: `${originX}% 0%`,
       }, {

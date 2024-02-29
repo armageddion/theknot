@@ -3,16 +3,25 @@ const images = Array
   .from({ length: 14 }, (_, i) => i + 1)
   .map(i => `/slide/slide_${i}.jpg`)
 
+const route = useRoute()
 const { next, prev, index } = useCycleList(images)
-const { pause, resume, isActive } = useIntervalFn(next, 4000)
+// const { pause, resume, isActive } = useIntervalFn(next, 4000)
 const offset = useTransition(
   computed(() => index.value * 100),
   { duration: 1000, transition: easeInOutExpo },
 )
+
+onMounted(() => {
+  if (route.hash) {
+    const i = Number.parseInt(route.hash.slice(1), 10)
+    if (!Number.isNaN(i))
+      index.value = i - 1
+  }
+})
 </script>
 
 <template>
-  <section aspect-video flex flex-col overflow-hidden>
+  <section relative aspect-video flex flex-col overflow-hidden>
     <!-- the images -->
     <div h-full flex flex-nowrap :style="{ transform: `translateX(-${offset}%)` }">
       <div
@@ -23,11 +32,11 @@ const offset = useTransition(
     </div>
 
     <!-- the play/pause -->
-    <div absolute-center top-4 z-1 w-full flex-center>
+    <!-- <div absolute-center top-4 z-1 w-full flex-center>
       <button h-8 w-8 flex-center @click="isActive ? pause() : resume()">
         <span text-lg :class="isActive ? 'i-ph-pause-circle' : 'i-ph-play-circle'" />
       </button>
-    </div>
+    </div> -->
 
     <!-- side controls -->
     <div absolute left-0 top-0 h-full w-full flex flex-auto>
