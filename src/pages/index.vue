@@ -160,4 +160,26 @@ section {
   grid-row: var(--r);
   position: relative;
 }
+
+h2 {
+  position: relative;
+  width: max-content;
+}
+
+h2::before {
+  position: absolute;
+  content: '';
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+  background: color-mix(
+    in oklch,
+    var(--color-secondary),
+    var(--color-accent) 100%
+  );
+  opacity: 0.1;
+  transform: rotate(-2deg);
+}
 </style>
