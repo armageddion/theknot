@@ -79,32 +79,15 @@ function initGsapScroll() {
 </script>
 
 <template>
-  <header h-screen w-full flex-center flex-col>
-    <h1 text-secondary text="[4rem]" font-bold>
-      {{ t('meta.title') }}
-    </h1>
-    <p max-w-md>
-      {{ t('meta.description') }}
-    </p>
-  </header>
+  <TheHero id="top" />
 
   <div
     grid auto-rows-auto grid-cols-8 w-full
     style="grid-template-rows: repeat(auto-fill, minmax(200px, 1fr))"
   >
-
-  <section p-4 style="--s: 4; --c: 2; --r: 2">
-      <a href="#welcome">
-        <h2 id="welcome" my-3 text-4xl text-secondary font-bold>
-          {{ t('welcome.title') }}
-        </h2>
-      </a>
-      <div max-w-md prose v-html="md.render(t('welcome.description'))" />
-    </section>
-
-    <TheFigure src="/slide/slide_2.jpg" style="--c: 1; --r: 4; --s: 4" aspect-video />
+    <TheFigure src="/slide/slide_1.jpg" style="--c: 1; --r: 4; --s: 4" aspect-video />
     <TheFigure src="/slide/slide_3.jpg" style="--c: 5; --r: 5; --s: 3" aspect="4/3" />
-    <TheFigure src="/slide/slide_4.jpg" style="--c: 3; --r: 6; --s: 2" aspect-video />
+    <TheFigure src="/slide/slide_2.jpg" style="--c: 3; --r: 6; --s: 2" aspect-video />
     <TheFigure src="/slide/slide_5.jpg" style="--c: 1; --r: 7; --s: 2" aspect-video />
 
     <section p-4 style="--s: 3; --c: 5; --r: 8">
@@ -159,14 +142,7 @@ function initGsapScroll() {
     </section>
   </div>
 
-  <footer h-screen w-full flex-center flex-col>
-    <h1 text-secondary text="[4rem]" font-bold>
-      {{ t('meta.title') }}
-    </h1>
-    <p max-w-md>
-      {{ t('meta.description') }}
-    </p>
-  </footer>
+  <TheHero footer />
 </template>
 
 <route lang="yaml">

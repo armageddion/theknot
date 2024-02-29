@@ -27,6 +27,7 @@ declare module 'vue' {
     TheFigure: typeof import('./components/The/Figure.vue')['default']
     TheFooter: typeof import('./components/TheFooter.vue')['default']
     TheHeader: typeof import('./components/The/Header.vue')['default']
+    TheHero: typeof import('./components/The/Hero.vue')['default']
     TheInput: typeof import('./components/The/Input.vue')['default']
     TheRing: typeof import('./components/The/Ring/Ring.vue')['default']
     TheRingBkp: typeof import('./components/TheRingBkp.vue')['default']
