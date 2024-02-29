@@ -35,5 +35,6 @@ declare module 'vue' {
     TheRingCircle: typeof import('./components/The/Ring/Circle.vue')['default']
     TheRingOne: typeof import('./components/The/Ring/One.vue')['default']
     TheSlide: typeof import('./components/The/Slide.vue')['default']
+    TheToc: typeof import('./components/The/Toc.vue')['default']
   }
 }
