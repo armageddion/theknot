@@ -24,6 +24,7 @@ declare module 'vue' {
     TheBuilder: typeof import('./components/The/Builder.vue')['default']
     TheCountdown: typeof import('./components/The/Countdown.vue')['default']
     TheCounter: typeof import('./components/TheCounter.vue')['default']
+    TheFigure: typeof import('./components/The/Figure.vue')['default']
     TheFooter: typeof import('./components/TheFooter.vue')['default']
     TheHeader: typeof import('./components/The/Header.vue')['default']
     TheInput: typeof import('./components/The/Input.vue')['default']
