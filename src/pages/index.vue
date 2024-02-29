@@ -79,6 +79,8 @@ function initGsapScroll() {
 </script>
 
 <template>
+  <TheToc />
+
   <TheHero id="top" />
 
   <div
@@ -90,9 +92,9 @@ function initGsapScroll() {
     <TheFigure src="/slide/slide_2.jpg" style="--c: 3; --r: 6; --s: 2" aspect-video />
     <TheFigure src="/slide/slide_5.jpg" style="--c: 1; --r: 7; --s: 2" aspect-video />
 
-    <section p-4 style="--s: 3; --c: 5; --r: 8">
+    <section id="where" p-4 style="--s: 3; --c: 5; --r: 8">
       <a href="#where">
-        <h2 id="where" my-3 text-4xl text-secondary font-bold>
+        <h2 my-3 text-4xl text-secondary font-bold>
           {{ t('where.title') }}
         </h2>
       </a>
@@ -103,9 +105,9 @@ function initGsapScroll() {
     <TheFigure src="/slide/slide_7.jpg" style="--c: 4; --r: 10; --s: 2" aspect-video />
     <TheFigure src="/slide/slide_8.jpg" style="--c: 6; --r: 11; --s: 2" aspect-video />
 
-    <section p-4 style="--s: 4; --c: 2; --r: 12">
+    <section id="when" p-4 style="--s: 4; --c: 2; --r: 12">
       <a href="#when">
-        <h2 id="when" my-3 text-4xl text-secondary font-bold>
+        <h2 my-3 text-4xl text-secondary font-bold>
           {{ t('when.title') }}
         </h2>
       </a>
@@ -118,9 +120,9 @@ function initGsapScroll() {
     <TheFigure src="/slide/slide_11.jpg" style="--c: 5; --r: 16; --s: 2" aspect="4/3" />
     <TheFigure src="/slide/slide_12.jpg" style="--c: 7; --r: 17; --s: 2" aspect-video />
 
-    <section p-4 style="--s: 4; --c: 3; --r: 19">
+    <section id="what" p-4 style="--s: 4; --c: 3; --r: 19">
       <a href="#what">
-        <h2 id="what" my-3 text-4xl text-secondary font-bold>
+        <h2 my-3 text-4xl text-secondary font-bold>
           {{ t('what.title') }}
         </h2>
       </a>
@@ -140,6 +142,8 @@ function initGsapScroll() {
       </a>
       <div max-w-md prose v-html="md.render(t('gift.description'))" />
     </section>
+
+    <section h-80 style="--s: 8; --c: 1; --r: 28" />
   </div>
 
   <TheHero footer />

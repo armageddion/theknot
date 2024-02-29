@@ -2,7 +2,7 @@ meta:
   title: The Littl3 Knot
   description: >
     Everything you never fantasized you didn’t need to know and even something that
-    is probably essential.s
+    is probably essential.
 not-found: Not found
 button:
   toggle_dark_on: Dark mode
@@ -32,6 +32,7 @@ links:
     gpx: GPX
     gmaps: GMaps
 when:
+  toc: When
   title: When to come and leave
   description: |
     If you are capable of physical effort, congratulations! You are on build
@@ -46,6 +47,7 @@ when:
     Note: we’ll be about half an hour from the city... if you get drunk, get
     someone else to take you home.
 what:
+  toc: What
   title: What not to bring
   description: |
     This wedding is in a forest, under the open skies. Be prepared for all the
@@ -61,6 +63,7 @@ what:
     - drink
     - diving equipment
 gift:
+  toc: Toaster
   title: We dont need a toaster.
   description: |
     We intend to remember this day for the rest of time, or at least, our

@@ -31,6 +31,7 @@ where:
     gpx: GPX
     gmaps: GMaps
 when:
+  toc: Kada
   title: Kada doći a kada otići?
   description: |
     Ako ste sposobni za fizički napor, čestitamo! Vi ste na timu koji će nam
@@ -44,6 +45,7 @@ when:
     Važno: bićemo na oko pola sata od grada... ako se napijete, nađite nekog da
     vas vrati kući.
 what:
+  toc: Šta
   title: Šta ne donositi?
   description: |
     Ova svadba je u šumi, na otvorenom. Budite spremni na sve što možete da
@@ -60,6 +62,7 @@ what:
     - piće
     - opremu za ronjenje
 gift:
+  toc: Toster
   title: Ne treba nam toster.
   description: |
     Mi želimo i planiramo da pamtimo ovaj dan do kraja vremena, ili barem naših
