@@ -1,15 +1,15 @@
 :root,
 html.dark {
-  --color-primary: oklch(0.32 0.08 136.86);
-  --color-secondary: oklch(0.4 0.14 27);
-  --color-accent: oklch(76.41% 0.142 92.54);
+  --color-primary: 36.49% 0.022 61.36;
+  --color-secondary: 77.79% 0.11 121.81;
+  --color-accent: 76.41% 0.142 92.54;
 }
 
 :root,
 html.light {
-  --color-primary: oklch(0.76 0.06 135.82);
-  --color-secondary: oklch(41.47% 0.122 24.7);
-  --color-accent: oklch(58.53% 0.12 96.35);
+  --color-primary: 87.93% 0.02 90.56;
+  --color-secondary: 41.14% 0.019 201.43;
+  --color-accent: 58.53% 0.12 96.35;
 }
 
 html,
@@ -27,17 +27,17 @@ html {
 html.dark {
   color-scheme: dark;
   background: #222;
-  background: color-mix(in oklab, var(--color-primary), #222222 0%);
+  background: color-mix(in oklab, oklch(var(--color-primary)), #111111 9%);
   color: #fff;
-  color: color-mix(in oklab, var(--color-accent), #fff 80%);
+  color: color-mix(in oklab, oklch(var(--color-accent)), #fff 80%);
 }
 
 html.light {
   color-scheme: light;
   background: #222;
-  background: color-mix(in oklab, var(--color-primary), #fff 0%);
+  background: color-mix(in oklab, oklch(var(--color-primary)), #eee 9%);
   color: #fff;
-  color: color-mix(in oklab, var(--color-accent), #000 60%);
+  color: color-mix(in oklab, oklch(var(--color-accent)), #000 60%);
 }
 
 a {
