@@ -12,9 +12,9 @@ import {
 export default defineConfig({
   theme: {
     colors: {
-      primary: 'var(--color-primary)',
-      secondary: 'var(--color-secondary)',
-      accent: 'var(--color-accent)',
+      primary: 'oklch(var(--color-primary) / <alpha-value>)',
+      secondary: 'oklch(var(--color-secondary) / <alpha-value>)',
+      accent: 'oklch(var(--color-accent) / <alpha-value>)',
     },
   },
   shortcuts: [
