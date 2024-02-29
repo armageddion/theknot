@@ -14,7 +14,7 @@ async function toggleLocales() {
 <template>
   <nav
     flex="~ gap-4"
-    fixed left-0 right-0 top-0 mb-8 px-8 py-4 text-xl
+    fixed left-0 right-0 top-0 z-1 mb-8 px-8 py-4 text-xl
   >
     <span flex-auto />
 
