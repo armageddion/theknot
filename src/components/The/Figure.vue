@@ -26,15 +26,11 @@ const innerStyle = computed(() => {
 </script>
 
 <template>
-  <figure
-    overflow-hidden opacity-65 mix-blend-multiply filter-grayscale
-    transition="opacity filter"
-    hover="opacity-100 filter-none"
-  >
+  <figure overflow-hidden>
     <a
       :href="`/gallery#${src.split('/').pop()?.split('.').shift()?.split('_').pop()}`"
       :style="outerStyle"
-      block h-full w-full overflow-hidden rounded-xl
+      block h-full w-full overflow-hidden
     >
       <span
         :style="innerStyle"
