@@ -42,11 +42,6 @@ declare module 'vue-router/auto/routes' {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/[...all]': RouteRecordInfo<'/[...all]', '/:all(.*)', { all: ParamValue<true> }, { all: ParamValue<false> }>,
     '/gallery': RouteRecordInfo<'/gallery', '/gallery', Record<never, never>, Record<never, never>>,
-    '/rings': RouteRecordInfo<'/rings', '/rings', Record<never, never>, Record<never, never>>,
-    '/rings/': RouteRecordInfo<'/rings/', '/rings', Record<never, never>, Record<never, never>>,
-    '/rings/littl31': RouteRecordInfo<'/rings/littl31', '/rings/littl31', Record<never, never>, Record<never, never>>,
-    '/rings/one': RouteRecordInfo<'/rings/one', '/rings/one', Record<never, never>, Record<never, never>>,
-    '/rings/tie': RouteRecordInfo<'/rings/tie', '/rings/tie', Record<never, never>, Record<never, never>>,
   }
 }
 
