@@ -27,7 +27,10 @@ const onScroll = useThrottleFn(() => {
     })
 }, 20)
 
-window.addEventListener('scroll', onScroll)
+onMounted(() => {
+  if (typeof window !== 'undefined')
+    window.addEventListener('scroll', onScroll)
+})
 
 function goTo(href: string) {
   const el = document.querySelector(href)
@@ -58,7 +61,7 @@ function goTo(href: string) {
             text-center
             text-secondary
             backdrop-blur
-            transition-opacity
+            transition="opacity bg-opacity"
             transition-duration-300
             hover="opacity-100! bg-opacity-40!"
             :class="{
@@ -66,7 +69,7 @@ function goTo(href: string) {
               'bg-opacity-40': link.offset > 0,
             }"
             :style="{
-              // transform: `translateX(${link.offset * 2}rem)`,
+              transform: `translateX(${link.offset * 0.5}rem)`,
               opacity: clamp(link.offset * 2, 0.5, 1),
             }"
             @click="goTo(link.href)"

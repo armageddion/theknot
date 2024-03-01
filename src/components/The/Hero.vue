@@ -18,7 +18,8 @@ function onScroll() {
 }
 
 onMounted(() => {
-  window.addEventListener('scroll', onScroll)
+  if (typeof window !== 'undefined')
+    window.addEventListener('scroll', onScroll)
 })
 </script>
 

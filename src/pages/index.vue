@@ -14,14 +14,17 @@ const md = markdownit()
 
 gsap.registerPlugin(ScrollTrigger)
 
-const lenis = new Lenis({
-  wrapper: document.body,
-  smoothWheel: true,
-  infinite: true,
-})
-
 onMounted(() => {
+  if (typeof document === 'undefined')
+    return
+
   requestAnimationFrame(raf)
+
+  const lenis = new Lenis({
+    wrapper: document.body,
+    smoothWheel: true,
+    infinite: true,
+  })
 
   const refresh = () => {
     window.history.scrollRestoration = 'manual'
@@ -30,12 +33,12 @@ onMounted(() => {
   refresh()
   window.addEventListener('resize', refresh)
   initGsapScroll()
-})
 
-function raf(time: number) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
+  function raf(time: number) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+})
 
 function initGsapScroll() {
   const gridItems = document.querySelectorAll('figure')
@@ -92,10 +95,7 @@ provide('bounding', bounding)
 
   <TheHero id="top" />
 
-  <div
-    grid auto-rows-auto grid-cols-8 w-full gap-2
-    style="grid-template-rows: repeat(auto-fill, minmax(200px, 1fr))"
-  >
+  <div grid auto-rows-auto grid-cols-8 w-full gap-2 style="grid-template-rows: repeat(auto-fill, minmax(200px, 1fr))">
     <TheFigure src="/slide/slide_1.jpg" style="--c: 1; --r: 4; --s: 4" aspect-video />
     <TheFigure src="/slide/slide_3.jpg" style="--c: 5; --r: 5; --s: 3" aspect="4/3" />
     <TheFigure src="/slide/slide_2.jpg" style="--c: 3; --r: 6; --s: 2" aspect-video />
