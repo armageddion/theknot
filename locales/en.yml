@@ -29,8 +29,8 @@ where:
 
     ....or just use navigation...
 links:
-    gpx: GPX
-    gmaps: GMaps
+  gpx: GPX
+  gmaps: GMaps
 when:
   toc: When
   title: When to come and leave
