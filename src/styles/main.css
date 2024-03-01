@@ -27,7 +27,7 @@ html {
 html.dark {
   color-scheme: dark;
   background: #222;
-  background: color-mix(in oklab, oklch(var(--color-primary)), #111111 9%);
+  background: color-mix(in oklab, oklch(var(--color-primary)), #000 9%);
   color: #fff;
   color: color-mix(in oklab, oklch(var(--color-accent)), #fff 80%);
 }

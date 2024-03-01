@@ -43,29 +43,32 @@ function goTo(href: string) {
     z-1 select-none
   >
     <nav>
-      <ul flex flex-col gap-2 p-2>
+      <ul flex flex-col gap-2 p-4>
         <li
           v-for="link in links"
           :key="link.href"
-          rounded-xl
-          bg-accent
-          text-secondary
-          backdrop-blur
-          transition-opacity transition-duration-300
-          hover="opacity-100! bg-opacity-40!"
-          :class="{
-            'bg-opacity-20': link.offset === 0,
-            'bg-opacity-40': link.offset > 0,
-          }"
-          :style="{
-            transform: `translateX(${link.offset}rem)`,
-            opacity: clamp(link.offset * 2, 0.5, 1),
-          }"
         >
           <a
             block
             w-full
-            px-3 py-1
+            rounded-lg
+            bg-accent
+            px-3
+            py-1
+            text-center
+            text-secondary
+            backdrop-blur
+            transition-opacity
+            transition-duration-300
+            hover="opacity-100! bg-opacity-40!"
+            :class="{
+              'bg-opacity-20': link.offset === 0,
+              'bg-opacity-40': link.offset > 0,
+            }"
+            :style="{
+              // transform: `translateX(${link.offset * 2}rem)`,
+              opacity: clamp(link.offset * 2, 0.5, 1),
+            }"
             @click="goTo(link.href)"
             v-text="t(`${link.key}.toc`)"
           />
