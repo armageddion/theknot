@@ -32,7 +32,7 @@ html.dark {
   color: color-mix(in oklab, oklch(var(--color-accent)), #fff 80%);
 }
 
-html.light {
+html:not(.dark) {
   color-scheme: light;
   background: #222;
   background: color-mix(in oklab, oklch(var(--color-primary)), #eee 9%);
