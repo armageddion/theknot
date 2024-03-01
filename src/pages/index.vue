@@ -40,7 +40,7 @@ function raf(time: number) {
 function initGsapScroll() {
   const gridItems = document.querySelectorAll('figure')
   gridItems.forEach((item) => {
-    const previousElementSibling = item.previousElementSibling
+    const previousElementSibling = item.previousElementSibling as HTMLElement
     const isLeftSide = previousElementSibling && (item.offsetLeft + item.offsetWidth <= previousElementSibling.offsetLeft + 1)
     const originX = isLeftSide ? 100 : 0
 
@@ -93,7 +93,7 @@ provide('bounding', bounding)
   <TheHero id="top" />
 
   <div
-    grid auto-rows-auto grid-cols-8 w-full
+    grid auto-rows-auto grid-cols-8 w-full gap-2
     style="grid-template-rows: repeat(auto-fill, minmax(200px, 1fr))"
   >
     <TheFigure src="/slide/slide_1.jpg" style="--c: 1; --r: 4; --s: 4" aspect-video />

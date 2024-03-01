@@ -30,7 +30,7 @@ const innerStyle = computed(() => {
     <a
       :href="`/gallery#${src.split('/').pop()?.split('.').shift()?.split('_').pop()}`"
       :style="outerStyle"
-      block h-full w-full overflow-hidden
+      block h-full w-full overflow-hidden rounded-xl
     >
       <span
         :style="innerStyle"
