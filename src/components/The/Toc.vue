@@ -52,18 +52,15 @@ function goTo(href: string) {
           :key="link.href"
         >
           <a
-            block
-            w-full
+            block w-full
             rounded-lg
             bg-accent
-            px-3
-            py-1
-            text-center
-            text-secondary
+            px-3 py-1
+            text-center text-secondary
             backdrop-blur
+            hover="opacity-100! bg-opacity-40!"
             transition="opacity bg-opacity"
             transition-duration-300
-            hover="opacity-100! bg-opacity-40!"
             :class="{
               'bg-opacity-20': link.offset === 0,
               'bg-opacity-40': link.offset > 0,
@@ -73,8 +70,9 @@ function goTo(href: string) {
               opacity: clamp(link.offset * 2, 0.5, 1),
             }"
             @click="goTo(link.href)"
-            v-text="t(`${link.key}.toc`)"
-          />
+          >
+            <h3 v-text="t(`${link.key}.toc`)" />
+          </a>
         </li>
       </ul>
     </nav>

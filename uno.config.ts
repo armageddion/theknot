@@ -32,7 +32,8 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        sans: 'Noto Sans',
+        head: 'Russo One',
+        sans: 'Play',
       },
     }),
   ],

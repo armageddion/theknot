@@ -67,7 +67,7 @@ provide('bounding', bounding)
     <TheFigure src="/slide/slide_5.jpg" style="--c: 1; --r: 7; --s: 2" aspect-video />
 
     <section id="where" ref="where" p-4 style="--s: 3; --c: 5; --r: 8">
-      <h2 my-3 text-4xl text-secondary font-bold>
+      <h2 my-3 text-4xl text-secondary>
         {{ t('where.title') }}
       </h2>
       <div max-w-md prose v-html="md.render(t('where.description'))" />
@@ -78,7 +78,7 @@ provide('bounding', bounding)
     <TheFigure src="/slide/slide_8.jpg" style="--c: 6; --r: 11; --s: 2" aspect-video />
 
     <section id="when" ref="when" p-4 style="--s: 4; --c: 2; --r: 12">
-      <h2 my-3 text-4xl text-secondary font-bold>
+      <h2 my-3 text-4xl text-secondary>
         {{ t('when.title') }}
       </h2>
       <div max-w-md prose v-html="md.render(t('when.description'))" />
@@ -91,7 +91,7 @@ provide('bounding', bounding)
     <TheFigure src="/slide/slide_12.jpg" style="--c: 7; --r: 17; --s: 2" aspect-video />
 
     <section id="what" ref="what" p-4 style="--s: 4; --c: 3; --r: 19">
-      <h2 my-3 text-4xl text-secondary font-bold>
+      <h2 my-3 text-4xl text-secondary>
         {{ t('what.title') }}
       </h2>
       <div max-w-md prose v-html="md.render(t('what.description'))" />
@@ -103,7 +103,7 @@ provide('bounding', bounding)
     <section h-24 style="--s: 8; --c: 1; --r: 23" />
 
     <section id="toaster" ref="toaster" p-4 style="--s: 4; --c: 3; --r: 27">
-      <h2 my-3 text-4xl text-secondary font-bold>
+      <h2 my-3 text-4xl text-secondary>
         {{ t('gift.title') }}
       </h2>
       <div max-w-md prose v-html="md.render(t('gift.description'))" />
