@@ -4,33 +4,39 @@ import { clamp } from '@vueuse/core'
 
 const { t } = useI18n()
 
-const links = ref([
-  // { href: '#top', key: 'top', offset: 0 },
-  { href: '#where', key: 'where', offset: 0 },
-  { href: '#when', key: 'when', offset: 0 },
-  { href: '#what', key: 'what', offset: 0 },
-  { href: '#toaster', key: 'gift', offset: 0 },
-])
-
 const bounding = inject('bounding') as Record<string, UseElementBoundingReturn>
 
-const onScroll = useThrottleFn(() => {
-  // calculate offset of the where el from top and bottom in decimals, such that it is 1 in the middle and 0 at the top and bottom
-  const getBoundsOffset = (el: UseElementBoundingReturn) => 1 - clamp(Math.abs((el.top.value + el.height.value / 2 - window.innerHeight / 2) / (el.height.value * 2)), 0, 1)
-
-  Object.entries(bounding)
-    .forEach(([key, el]) => {
-      const offset = getBoundsOffset(el)
-      const link = links.value.find(link => link.href.slice(1) === key)
-      if (link)
-        link.offset = offset
-    })
-}, 20)
+const isWide = ref(true)
+const toggleDisplay = useToggle(isWide)
+const links = ref([
+  { href: '#where', key: 'where', icon: 'i-ph-map-pin-line' },
+  { href: '#when', key: 'when', icon: 'i-ph-clock' },
+  { href: '#what', key: 'what', icon: 'i-ph-tree' },
+  { href: '#toaster', key: 'gift', icon: 'i-ph-gift' },
+].map(link => ({ ...link, offset: 0, swipe: -100 })))
 
 onMounted(() => {
   if (typeof window !== 'undefined')
     window.addEventListener('scroll', onScroll)
 })
+
+function onScroll() {
+  // 0 at the mid, +/-1 at top and bot
+  const winHeight = window.innerHeight
+  const getBoundsOffset = (el: UseElementBoundingReturn) => (el.top.value + el.height.value / 2 - winHeight / 2) / (el.height.value * 2)
+
+  Object.entries(bounding)
+    .forEach(([key, el]) => {
+      const bounds = getBoundsOffset(el)
+      const offset = 1 - clamp(Math.abs(bounds), 0, 1)
+      const swipe = (1 - bounds - 1) * 100
+      const link = links.value.find(link => link.href.slice(1) === key)
+      if (link) {
+        link.offset = offset
+        link.swipe = swipe
+      }
+    })
+}
 
 function goTo(href: string) {
   const el = document.querySelector(href)
@@ -40,38 +46,54 @@ function goTo(href: string) {
 </script>
 
 <template>
+  <button fixed left-0 top-0 z-1 p-1 opacity-20 @click="toggleDisplay()">
+    <div v-if="isWide" i-ph-arrow-line-left />
+    <div v-else i-ph-arrow-right />
+  </button>
   <aside
-    fixed left-0
-    class="top-1/2 translate-y--1/2 transform"
-    z-1 select-none
+    top="1/2"
+    translate-y="-1/2"
+    fixed left-0 z-1 select-none
   >
-    <nav>
-      <ul flex flex-col gap-2 p-4>
+    <nav overflow-hidden rounded-r-2xl py-4 backdrop-blur>
+      <ul flex flex-col gap-2>
         <li
           v-for="link in links"
           :key="link.href"
         >
           <a
-            block w-full
-            rounded-lg
-            bg-accent
-            px-3 py-1
-            text-center text-secondary
-            backdrop-blur
+            relative block w-full rounded-lg py-1
             hover="opacity-100! bg-opacity-40!"
             transition="opacity bg-opacity"
             transition-duration-300
+            will-change="opacity bg-opacity"
             :class="{
               'bg-opacity-20': link.offset === 0,
               'bg-opacity-40': link.offset > 0,
             }"
             :style="{
-              transform: `translateX(${link.offset * 0.5}rem)`,
               opacity: clamp(link.offset * 2, 0.5, 1),
             }"
             @click="goTo(link.href)"
           >
-            <h3 v-text="t(`${link.key}.toc`)" />
+            <span
+              absolute left-0 top-0 h-full w-full bg-secondary
+              will-change="transform opacity"
+              :style="{
+                opacity: clamp(link.offset * 2, 0, 0.5),
+                transform: `translateX(${link.swipe}%)`,
+              }"
+            />
+            <h3
+              v-if="isWide"
+              relative z-1 px-3
+              v-text="t(`${link.key}.toc`)"
+            />
+            <div
+              v-else
+              w-8
+              :class="link.icon"
+            />
           </a>
         </li>
       </ul>
