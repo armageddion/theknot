@@ -13,11 +13,9 @@ async function toggleLocales() {
 
 <template>
   <nav
-    flex="~ gap-4"
-    fixed left-0 right-0 top-0 z-1 mb-8 px-8 py-4 text-xl
-  >
-    <span flex-auto />
 
+    fixed right-0 top-0 z-1 flex gap-4 rounded-bl-2xl px-8 py-4 text-xl backdrop-blur
+  >
     <button
       icon-btn
       :title="isDark ? t('button.toggle_dark_off') : t('button.toggle_dark_on')"
