@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Lenis from '@studio-freight/lenis'
 import markdownit from 'markdown-it'
 
@@ -9,10 +7,9 @@ defineOptions({
 })
 
 const { t } = useI18n()
+const scroll = useSharedScroll()
 
 const md = markdownit()
-
-gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
   if (typeof document === 'undefined')
@@ -26,54 +23,22 @@ onMounted(() => {
     infinite: true,
   })
 
+  lenis.on('scroll', (e: any) => {
+    scroll.y.value = e.scroll
+  })
+
   const refresh = () => {
     window.history.scrollRestoration = 'manual'
   }
 
   refresh()
   window.addEventListener('resize', refresh)
-  initGsapScroll()
 
   function raf(time: number) {
     lenis.raf(time)
     requestAnimationFrame(raf)
   }
 })
-
-function initGsapScroll() {
-  const gridItems = document.querySelectorAll('figure')
-  gridItems.forEach((item) => {
-    const previousElementSibling = item.previousElementSibling as HTMLElement
-    const isLeftSide = previousElementSibling && (item.offsetLeft + item.offsetWidth <= previousElementSibling.offsetLeft + 1)
-    const originX = isLeftSide ? 100 : 0
-
-    gsap
-      .timeline({
-        defaults: {
-          // duration: 1,
-          ease: 'power4',
-        },
-        scrollTrigger: {
-          trigger: item,
-          start: 'top bottom-=15%',
-          end: '+=100%',
-          scrub: true,
-        },
-      })
-      .fromTo(item.querySelector('a'), {
-        scale: 0,
-        transformOrigin: `${originX}% 0%`,
-      }, {
-        scale: 1,
-      })
-      .fromTo(item.querySelector('span'), {
-        scale: 5,
-        transformOrigin: `${originX}% 0%`,
-      }, {
-        scale: 1,
-      }, 0)
-  })
-}
 
 const where = ref<HTMLElement | null>(null)
 const when = ref<HTMLElement | null>(null)
