@@ -58,12 +58,17 @@ function easeInOutQuad(t: number) {
 </script>
 
 <template>
-  <figure ref="figure" overflow-hidden>
+  <figure ref="figure">
     <a
       :href="`/gallery#${src.split('/').pop()?.split('.').shift()?.split('_').pop()}`" :style="outerStyle" block h-full
       w-full overflow-hidden rounded-xl
+      will-change="transform"
     >
-      <span :style="innerStyle" block h-full w-full bg-cover bg-center />
+      <span
+        :style="innerStyle"
+        block h-full w-full bg-cover bg-center
+        will-change="transform"
+      />
     </a>
   </figure>
 </template>
