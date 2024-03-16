@@ -8,8 +8,16 @@ button:
   toggle_dark_on: Dark mode
   toggle_dark_off: Light mode
   toggle_langs: Change language
+welcome:
+  title: Welcome, dear hoomans
+  description: |
+    We have decided to celebrate our love for each other with you - a small group
+    of closest family members and dear friends. Grace us with your presence if you dare
+    and make our celebration a little bit better than it would've been without yous.
+
+    Our venue is limited capacity so leave your aligator, friend of friend and whatshisname... 
 where:
-  title: Welcome, but where?
+  title: OK, but where?
   description: |
     Leave the city via the bridge nearest to the fortress. Follow the road for
     quite a while. Avoid the trap in Petrovaradin of turning right-ish towards
@@ -17,7 +25,7 @@ where:
     turn right. Keep right at a big cross. When you see signs for “Velika
     Remeta” follow them.. When you can no longer see these signs, look for
     signs for “Uvac”. When you get to “Uvac”, take a gulp or a sip and a
-    breath.. From here, follow the noise..
+    breath.. From here, follow the beautiful people..
 
     ....or just use navigation...
 links:

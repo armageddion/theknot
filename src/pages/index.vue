@@ -92,6 +92,16 @@ function initGsapScroll() {
     grid auto-rows-auto grid-cols-8 w-full
     style="grid-template-rows: repeat(auto-fill, minmax(200px, 1fr))"
   >
+
+  <section p-4 style="--s: 4; --c: 2; --r: 2">
+      <a href="#welcome">
+        <h2 id="welcome" my-3 text-4xl text-secondary font-bold>
+          {{ t('welcome.title') }}
+        </h2>
+      </a>
+      <div max-w-md prose v-html="md.render(t('welcome.description'))" />
+    </section>
+
     <TheFigure src="/slide/slide_2.jpg" style="--c: 1; --r: 4; --s: 4" aspect-video />
     <TheFigure src="/slide/slide_3.jpg" style="--c: 5; --r: 5; --s: 3" aspect="4/3" />
     <TheFigure src="/slide/slide_4.jpg" style="--c: 3; --r: 6; --s: 2" aspect-video />
@@ -139,7 +149,7 @@ function initGsapScroll() {
     <TheFigure src="/slide/slide_14.jpg" style="--c: 3; --r: 22; --s: 3" aspect-video />
     <section h-24 style="--s: 8; --c: 1; --r: 23" />
 
-    <section p-4 style="--s: 4; --c: 3; --r: 27">
+    <section p-4 style="--s: 4; --c: 5; --r: 27">
       <a href="#gift">
         <h2 id="gift" my-3 text-4xl text-secondary font-bold>
           {{ t('gift.title') }}

@@ -8,15 +8,23 @@ button:
   toggle_dark_on: Potamni
   toggle_dark_off: Posvetli
   toggle_langs: Promeni jezik
+welxome:
+  title: Dobro došli dragi ljudi
+  Description: |
+    Mi smo odlučili da proslavimo našu ljubav koju gajimo jedno prema drugom sa vama - malom
+    grupom najbliže rodbine i dragih prijatelja. Obasjajte nas vašom pojavom i učinite 
+    naše slavlje malo boljim nego što bi bilo bez vas.
+
+    Naš prostor je ograničen, tako da ostavite vašeg aligatora, drugaricu od druga ili onog kakoseonobešezove...
 where:
-  title: Dobro došli ali gde?
+  title: Dobro, ali gde?
   description: |
     Napustite grad putem duge. Dalje nastavite pravo neko vreme. Nemojte da
     napravite grešku u Petrovaradinu i skrenete desno prema Rumi/Beočinu.
     Natavite jos malo pravo. Kad stignete do ruske crkve, skrenite desno. Kod
     velikog krsta, držite se desno. Odatle pratite putokaze za Veliku Remetu.
     Kada ti znaci prestanu, pratite znake za izvor Uvac. Na izvoru popite
-    gutljaj ili dva, udahnite duboko i dalje pratite buku.
+    gutljaj ili dva, udahnite duboko i dalje pratite lepe ljude.
 
     ...ili samo koristite navigaciju...
   links:
