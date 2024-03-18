@@ -8,7 +8,10 @@ button:
   toggle_dark_on: Potamni
   toggle_dark_off: Posvetli
   toggle_langs: Promeni jezik
-welxome:
+top:
+  toc: Početak
+welcome:
+  toc: Dobro došli
   title: Dobro došli dragi ljudi
   Description: |
     Mi smo odlučili da proslavimo našu ljubav koju gajimo jedno prema drugom sa vama - malom
@@ -17,7 +20,8 @@ welxome:
 
     Naš prostor je ograničen, tako da ostavite vašeg aligatora, drugaricu od druga ili onog kakoseonobešezove...
 where:
-  title: Dobro, ali gde?
+  toc: Gde
+  title: Dobro ali gde?
   description: |
     Napustite grad putem duge. Dalje nastavite pravo neko vreme. Nemojte da
     napravite grešku u Petrovaradinu i skrenete desno prema Rumi/Beočinu.
@@ -72,3 +76,7 @@ gift:
     poklon, možete da koristite ovaj venmo link za vaš doprinos; ili ako ste
     dinosaurus, prihvatićemo i onaj arhaični ritual koji je vezan za papirnu
     kovertu.
+rsvp:
+  toc: Potvrda
+  title: Potvrda s'il vous plaît.
+  description: |

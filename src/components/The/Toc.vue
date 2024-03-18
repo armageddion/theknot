@@ -9,10 +9,12 @@ const bounding = inject('bounding') as Record<string, UseElementBoundingReturn>
 const isWide = ref(true)
 const toggleDisplay = useToggle(isWide)
 const links = ref([
+  { href: '#welcome', key: 'welcome', icon: 'i-ph-map-pin-line' },
   { href: '#where', key: 'where', icon: 'i-ph-map-pin-line' },
   { href: '#when', key: 'when', icon: 'i-ph-clock' },
   { href: '#what', key: 'what', icon: 'i-ph-tree' },
   { href: '#toaster', key: 'gift', icon: 'i-ph-gift' },
+  { href: '#rsvp', key: 'rsvp', icon: 'i-ph-gift' },
 ].map(link => ({ ...link, offset: 0, swipe: -100 })))
 
 onMounted(() => {

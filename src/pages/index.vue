@@ -40,12 +40,14 @@ onMounted(() => {
   }
 })
 
+const welcome = ref<HTMLElement | null>(null)
 const where = ref<HTMLElement | null>(null)
 const when = ref<HTMLElement | null>(null)
 const what = ref<HTMLElement | null>(null)
 const toaster = ref<HTMLElement | null>(null)
 
 const bounding = {
+  welcome: useElementBounding(welcome),
   where: useElementBounding(where),
   when: useElementBounding(when),
   what: useElementBounding(what),
@@ -58,9 +60,16 @@ provide('bounding', bounding)
 <template>
   <TheToc />
 
-  <TheHero id="top" />
+  <TheHero id="top" /> 
 
   <div grid auto-rows-auto grid-cols-8 w-full gap-2 style="grid-template-rows: repeat(auto-fill, minmax(200px, 1fr))">
+    <section id="welcome" ref="welcome" p-4 style="--s: 5; --c: 3; --r: 1">
+      <h2 my-3 text-4xl text-secondary>
+        {{ t('welcome.title') }}
+      </h2>
+      <div max-w-md prose v-html="md.render(t('welcome.description'))" />
+    </section> 
+
     <TheFigure src="/slide/slide_1.jpg" style="--c: 1; --r: 4; --s: 4" aspect-video />
     <TheFigure src="/slide/slide_3.jpg" style="--c: 5; --r: 5; --s: 3" aspect="4/3" />
     <TheFigure src="/slide/slide_2.jpg" style="--c: 3; --r: 6; --s: 2" aspect-video />
@@ -108,6 +117,17 @@ provide('bounding', bounding)
       </h2>
       <div max-w-md prose v-html="md.render(t('gift.description'))" />
     </section>
+
+    <section h-24 style="--s: 8; --c: 1; --r: 28" />
+    <TheFigure src="/slide/slide_9.jpg" style="--c: 5; --r: 29; --s: 4" aspect-video />
+    <TheFigure src="/slide/slide_10.jpg" style="--c: 2; --r: 30; --s: 3" aspect-video />
+
+    <section id="rsvp" ref="rsvp" p-4 style="--s: 8; --c: 3; --r: 31">
+      <h2 my-3 text-4xl text-secondary>
+        {{ t('rsvp.title') }}
+      </h2>
+      <div max-w-md prose v-html="md.render(t('rsvp.description'))" />
+    </section>    
 
     <section h-80 style="--s: 8; --c: 1; --r: 28" />
   </div>
