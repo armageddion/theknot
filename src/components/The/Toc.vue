@@ -4,18 +4,17 @@ import { clamp } from '@vueuse/core'
 
 const { t } = useI18n()
 
-const bounding = inject('bounding') as Record<string, UseElementBoundingReturn>
+const bounding = inject('bounding') as ComputedRef<Record<string, UseElementBoundingReturn>>
+const sections = inject('sections') as string[]
 
 const isWide = ref(true)
 const toggleDisplay = useToggle(isWide)
-const links = ref([
-  { href: '#welcome', key: 'welcome', icon: 'i-ph-map-pin-line' },
-  { href: '#where', key: 'where', icon: 'i-ph-map-pin-line' },
-  { href: '#when', key: 'when', icon: 'i-ph-clock' },
-  { href: '#what', key: 'what', icon: 'i-ph-tree' },
-  { href: '#toaster', key: 'gift', icon: 'i-ph-gift' },
-  { href: '#rsvp', key: 'rsvp', icon: 'i-ph-gift' },
-].map(link => ({ ...link, offset: 0, swipe: -100 })))
+const links = ref(sections.map(key => ({
+  key,
+  href: `#${key}`,
+  offset: 0,
+  swipe: -100,
+})))
 
 onMounted(() => {
   if (typeof window !== 'undefined')
@@ -25,18 +24,19 @@ onMounted(() => {
 function onScroll() {
   // 0 at the mid, +/-1 at top and bot
   const winHeight = window.innerHeight
-  const getBoundsOffset = (el: UseElementBoundingReturn) => (el.top.value + el.height.value / 2 - winHeight / 2) / (el.height.value * 2)
+  const getBoundsOffset = (el: UseElementBoundingReturn) =>
+    (el.top.value + el.height.value / 2 - winHeight / 2) / (el.height.value * 2)
 
-  Object.entries(bounding)
+  Object.entries(bounding.value)
     .forEach(([key, el]) => {
       const bounds = getBoundsOffset(el)
       const offset = 1 - clamp(Math.abs(bounds), 0, 1)
       const swipe = (1 - bounds - 1) * 100
-      const link = links.value.find(link => link.href.slice(1) === key)
-      if (link) {
-        link.offset = offset
-        link.swipe = swipe
-      }
+      const link = links.value.find(link => link.key === key)
+      if (!link)
+        throw new Error(`Link not found for ${key}`)
+      link.offset = offset
+      link.swipe = swipe
     })
 }
 
@@ -87,14 +87,8 @@ function goTo(href: string) {
               }"
             />
             <h3
-              v-if="isWide"
               relative z-1 px-3
               v-text="t(`${link.key}.toc`)"
-            />
-            <div
-              v-else
-              w-8
-              :class="link.icon"
             />
           </a>
         </li>
