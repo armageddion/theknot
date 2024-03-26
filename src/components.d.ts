@@ -7,6 +7,12 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    PartGift: typeof import('./components/Part/Gift.vue')['default']
+    PartRespond: typeof import('./components/Part/Respond.vue')['default']
+    PartWelcome: typeof import('./components/Part/Welcome.vue')['default']
+    PartWhat: typeof import('./components/Part/What.vue')['default']
+    PartWhen: typeof import('./components/Part/When.vue')['default']
+    PartWhere: typeof import('./components/Part/Where.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheCountdown: typeof import('./components/The/Countdown.vue')['default']

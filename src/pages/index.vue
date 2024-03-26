@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import Lenis from '@studio-freight/lenis'
-import markdownit from 'markdown-it'
 
 defineOptions({
   name: 'IndexPage',
 })
 
-const md = markdownit()
-const { t } = useI18n()
 const scroll = useSharedScroll()
 
 onMounted(() => {
@@ -59,12 +56,7 @@ provide('bounding', bounding)
 
   <div grid auto-rows-auto grid-cols-8 w-full gap-2 style="grid-template-rows: repeat(auto-fill, minmax(200px, 1fr))">
     <section style="--s: 8; --c: 1; --r: 1" min-h-screen flex-center p-4>
-      <div id="welcome" :ref="refs.set">
-        <h2 my-3 text-4xl text-secondary>
-          {{ t('welcome.title') }}
-        </h2>
-        <div max-w-md prose v-html="md.render(t('welcome.description'))" />
-      </div>
+      <PartWelcome id="welcome" :ref="refs.set" />
     </section>
 
     <TheFigure src="/slide/slide_1.jpg" style="--c: 1; --r: 4; --s: 4" aspect-video />
@@ -73,21 +65,15 @@ provide('bounding', bounding)
     <TheFigure src="/slide/slide_5.jpg" style="--c: 1; --r: 7; --s: 2" aspect-video />
 
     <section id="where" :ref="refs.set" p-4 style="--s: 3; --c: 5; --r: 8">
-      <h2 my-3 text-4xl text-secondary>
-        {{ t('where.title') }}
-      </h2>
-      <div max-w-md prose v-html="md.render(t('where.description'))" />
+      <PartWhere />
     </section>
 
     <TheFigure src="/slide/slide_6.jpg" style="--c: 1; --r: 9; --s: 3" aspect-video />
     <TheFigure src="/slide/slide_7.jpg" style="--c: 4; --r: 10; --s: 2" aspect-video />
     <TheFigure src="/slide/slide_8.jpg" style="--c: 6; --r: 11; --s: 2" aspect-video />
 
-      <h2 my-3 text-4xl text-secondary>
-        {{ t('when.title') }}
-      </h2>
-      <div max-w-md prose v-html="md.render(t('when.description'))" />
     <section id="when" :ref="refs.set" p-4 style="--s: 4; --c: 2; --r: 12">
+      <PartWhen />
     </section>
 
     <section h-24 style="--s: 8; --c: 1; --r: 13" />
@@ -97,10 +83,7 @@ provide('bounding', bounding)
     <TheFigure src="/slide/slide_12.jpg" style="--c: 7; --r: 17; --s: 2" aspect-video />
 
     <section id="what" :ref="refs.set" p-4 style="--s: 4; --c: 3; --r: 19">
-      <h2 my-3 text-4xl text-secondary>
-        {{ t('what.title') }}
-      </h2>
-      <div max-w-md prose v-html="md.render(t('what.description'))" />
+      <PartWhat />
     </section>
 
     <section h-24 style="--s: 8; --c: 1; --r: 20" />
@@ -109,10 +92,7 @@ provide('bounding', bounding)
     <section h-24 style="--s: 8; --c: 1; --r: 23" />
 
     <section id="gift" :ref="refs.set" p-4 style="--s: 4; --c: 3; --r: 27">
-      <h2 my-3 text-4xl text-secondary>
-        {{ t('gift.title') }}
-      </h2>
-      <div max-w-md prose v-html="md.render(t('gift.description'))" />
+      <PartGift />
     </section>
 
     <section h-24 style="--s: 8; --c: 1; --r: 28" />
@@ -121,12 +101,7 @@ provide('bounding', bounding)
     <TheFigure src="/slide/slide_10.jpg" style="--c: 2; --r: 30; --s: 3" aspect-video />
 
     <section style="--s: 8; --c: 1; --r: 31" min-h-screen flex-center p-4>
-      <div id="rsvp" :ref="refs.set" min-h-80>
-        <h2 my-3 text-4xl text-secondary>
-          {{ t('rsvp.title') }}
-        </h2>
-        <div max-w-md prose v-html="md.render(t('rsvp.description'))" />
-      </div>
+      <PartRespond id="rsvp" :ref="refs.set" />
     </section>
   </div>
 
