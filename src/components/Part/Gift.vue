@@ -10,5 +10,6 @@ const md = markdownit()
     {{ t('gift.title') }}
   </h2>
   <div max-w-md prose v-html="md.render(t('gift.description'))" />
-  <img src="/venmo.png" alt="Gift">
+  <img src="/venmo.png" alt="Gift_v">
+  <img src="/paypal.png" alt="Gift_p">
 </template>

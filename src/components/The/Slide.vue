@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const images = Array
-  .from({ length: 14 }, (_, i) => i + 1)
+  .from({ length: 35 }, (_, i) => i + 1)
   .map(i => `/slide/slide_${i}.jpg`)
 
 const route = useRoute()
