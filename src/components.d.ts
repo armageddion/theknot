@@ -7,6 +7,8 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ACircle: typeof import('./components/A/Circle.vue')['default']
+    AFigure: typeof import('./components/A/Figure.vue')['default']
     PartGift: typeof import('./components/Part/Gift.vue')['default']
     PartRespond: typeof import('./components/Part/Respond.vue')['default']
     PartWelcome: typeof import('./components/Part/Welcome.vue')['default']
@@ -15,8 +17,8 @@ declare module 'vue' {
     PartWhere: typeof import('./components/Part/Where.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TheClock: typeof import('./components/The/Clock.vue')['default']
     TheCountdown: typeof import('./components/The/Countdown.vue')['default']
-    TheFigure: typeof import('./components/The/Figure.vue')['default']
     TheHeader: typeof import('./components/The/Header.vue')['default']
     TheHero: typeof import('./components/The/Hero.vue')['default']
     TheSlide: typeof import('./components/The/Slide.vue')['default']

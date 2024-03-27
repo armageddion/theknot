@@ -7,8 +7,6 @@ const { t } = useI18n()
 const bounding = inject('bounding') as ComputedRef<Record<string, UseElementBoundingReturn>>
 const sections = inject('sections') as string[]
 
-const isWide = ref(true)
-const toggleDisplay = useToggle(isWide)
 const links = ref(sections.map(key => ({
   key,
   href: `#${key}`,
@@ -48,10 +46,6 @@ function goTo(href: string) {
 </script>
 
 <template>
-  <button fixed left-0 top-0 z-1 p-1 opacity-20 @click="toggleDisplay()">
-    <div v-if="isWide" i-ph-arrow-line-left />
-    <div v-else i-ph-arrow-right />
-  </button>
   <aside
     top="1/2"
     translate-y="-1/2"

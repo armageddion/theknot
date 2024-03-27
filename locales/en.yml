@@ -16,7 +16,7 @@ welcome:
     of closest family members and dear friends. Grace us with your presence if you dare
     and make our celebration a little bit better than it would've been without yous.
 
-    Our venue is limited capacity so leave your aligator, friend of friend and whatshisname... 
+    Our venue is limited capacity so leave your aligator, friend of friend and whatshisname...
 where:
   toc: Where
   title: Ok, but where?
@@ -30,9 +30,9 @@ where:
     breath.. From here, follow the beautiful people..
 
     ....or just use navigation...
-links:
-  gpx: GPX
-  gmaps: GMaps
+  links:
+    gpx: GPX
+    gmaps: GMaps
 when:
   toc: When
   title: When to come and leave
@@ -79,3 +79,5 @@ rsvp:
   toc: RSVP
   title: RSVP
   description: |
+    If you fail to confirm attendance, you will be banished!
+  link: Confirm attendance
