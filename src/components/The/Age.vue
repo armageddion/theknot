@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const MIN = 18
+const MIN = 25
 const MAX = 65
 const age = ref(MAX)
 </script>
