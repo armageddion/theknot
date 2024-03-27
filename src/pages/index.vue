@@ -132,7 +132,7 @@ section {
     top: -10%;
     left: -10%;
     z-index: -1;
-    background: oklch(var(--color-accent));
+    background: var(--color-accent);
     opacity: 0.1;
     transform: rotate(-0.8deg);
   }
