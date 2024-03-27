@@ -14,7 +14,7 @@ const formulaHtml = computed(() => {
 </script>
 
 <template>
-  <div max-w-6xl w-full flex flex-col gap-6 py-32 lg:flex-row lg:gap-16>
+  <div max-w-6xl w-full flex flex-col gap-6 lg:flex-row lg:gap-16>
     <div w-full lg="w-1/2">
       <h2 my-3 text-4xl text-secondary>
         {{ t('when.title') }}
@@ -28,7 +28,7 @@ const formulaHtml = computed(() => {
       />
       <div max-w-md prose v-html="md.render(t('when.descriptionB'))" />
     </div>
-    <div lg="w-1/2" w-full flex items-center gap-4>
+    <div lg="w-1/2" w-full flex items-center gap-4 lg:gap-16>
       <TheAge />
     </div>
   </div>

@@ -22,6 +22,7 @@ declare module 'vue' {
     TheCountdown: typeof import('./components/The/Countdown.vue')['default']
     TheHeader: typeof import('./components/The/Header.vue')['default']
     TheHero: typeof import('./components/The/Hero.vue')['default']
+    TheMap: typeof import('./components/The/Map.vue')['default']
     TheSlide: typeof import('./components/The/Slide.vue')['default']
     TheToc: typeof import('./components/The/Toc.vue')['default']
   }

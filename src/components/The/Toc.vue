@@ -14,20 +14,11 @@ const links = ref(sections.map(key => ({
   swipe: -100,
 })))
 
-onMounted(() => {
-  if (typeof window !== 'undefined')
-    window.addEventListener('scroll', onScroll)
-})
-
-function onScroll() {
-  // 0 at the mid, +/-1 at top and bot
-  const winHeight = window.innerHeight
-  const getBoundsOffset = (el: UseElementBoundingReturn) =>
-    (el.top.value + el.height.value / 2 - winHeight / 2) / (el.height.value * 2)
-
+watchEffect(() => {
+  const wh = window.innerHeight
   Object.entries(bounding.value)
     .forEach(([key, el]) => {
-      const bounds = getBoundsOffset(el)
+      const bounds = getBoundsOffset(el, wh)
       const offset = 1 - clamp(Math.abs(bounds), 0, 1)
       const swipe = (1 - bounds - 1) * 100
       const link = links.value.find(link => link.key === key)
@@ -36,7 +27,7 @@ function onScroll() {
       link.offset = offset
       link.swipe = swipe
     })
-}
+})
 
 function goTo(href: string) {
   const el = document.querySelector(href)

@@ -8,10 +8,10 @@ html.dark {
 
 :root,
 html.light {
-  --color-content: #030303;
   --color-primary: #DCD7C9;
   --color-secondary: #678202;
   --color-accent: #917B02;
+  --color-content: #030303;
 }
 
 html,
