@@ -68,6 +68,7 @@ declare global {
   const easeOutSine: typeof import('./utils/easing')['easeOutSine']
   const effectScope: typeof import('vue')['effectScope']
   const extendRef: typeof import('@vueuse/core')['extendRef']
+  const getBoundsOffset: typeof import('./utils/offsets')['getBoundsOffset']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const h: typeof import('vue')['h']
@@ -407,6 +408,7 @@ declare module 'vue' {
     readonly easeOutSine: UnwrapRef<typeof import('./utils/easing')['easeOutSine']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
+    readonly getBoundsOffset: UnwrapRef<typeof import('./utils/offsets')['getBoundsOffset']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
@@ -737,6 +739,7 @@ declare module '@vue/runtime-core' {
     readonly easeOutSine: UnwrapRef<typeof import('./utils/easing')['easeOutSine']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
+    readonly getBoundsOffset: UnwrapRef<typeof import('./utils/offsets')['getBoundsOffset']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>

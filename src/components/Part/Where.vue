@@ -6,7 +6,7 @@ const lg = markdownit()
 </script>
 
 <template>
-  <div max-w-6xl w-full flex flex-col gap-6 py-32 lg:flex-row lg:gap-16>
+  <div max-w-6xl w-full flex flex-col gap-6 lg:flex-row lg:gap-16>
     <div class="order-1 w-full lg:order-2 lg:w-1/2">
       <h2 my-3 text-4xl text-secondary>
         {{ t('where.title') }}
@@ -33,8 +33,8 @@ const lg = markdownit()
         </a>
       </div>
     </div>
-    <div class="order-2 w-full lg:order-1 lg:w-1/2">
-      <img src="/map.png" alt="An old map">
+    <div class="order-2 w-full lg:order-1 lg:w-1/2" overflow-hidden>
+      <TheMap />
     </div>
   </div>
 </template>

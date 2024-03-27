@@ -15,6 +15,7 @@ export default defineConfig({
       primary: 'var(--color-primary)',
       secondary: 'var(--color-secondary)',
       accent: 'var(--color-accent)',
+      content: 'var(--color-content)',
     },
   },
   shortcuts: [
@@ -33,7 +34,17 @@ export default defineConfig({
         'vertical-align': 'middle',
       },
     }),
-    presetTypography(),
+    presetTypography({
+      cssExtend: {
+        'a': {
+          'color': 'var(--color-secondary)',
+          'text-decoration': 'none',
+        },
+        'a:hover': {
+          'text-decoration': 'underline',
+        },
+      },
+    }),
     presetWebFonts({
       fonts: {
         head: 'Rubik',

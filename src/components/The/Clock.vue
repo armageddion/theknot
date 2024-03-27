@@ -10,6 +10,7 @@ const age = toRef(props, 'age')
 
 const RAD = 50
 const CIRC = radToCirc(RAD)
+const MID = 45
 const TICK = 3
 const HOUR = 360 / 12
 const rotate = ref(HOUR * 4)
@@ -17,7 +18,7 @@ const dashLength = ref(HOUR * 4)
 const strokeWidth = ref(RAD)
 
 watch(age, (age) => {
-  const arrive = age < 40 ? 2 : 4
+  const arrive = age < MID ? 2 : 4
   const depart = 24 + Math.E - 2 / 15 * age + 3 - 12
   const _rotate = HOUR * arrive
   const _dashLength = HOUR * depart - _rotate
