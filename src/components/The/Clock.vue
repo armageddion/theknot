@@ -43,7 +43,8 @@ watch(age, (age) => {
       cx="50"
       cy="50"
       r="50"
-      fill="oklch(var(--color-accent) / 0.1)"
+      fill="var(--color-accent)"
+      opacity-10
     />
     <ACircle
       :rad="RAD"
@@ -52,7 +53,8 @@ watch(age, (age) => {
       :stroke-width="strokeWidth"
       :dash-length="dashLength"
       :dash-center="false"
-      stroke="oklch(var(--color-secondary) / 0.25)"
+      stroke="var(--color-secondary)"
+      opacity-25
     />
     <ACircle
       :rad="RAD"
@@ -60,7 +62,8 @@ watch(age, (age) => {
       :rotate
       :stroke-width="TICK"
       :dash-length="2"
-      stroke="oklch(var(--color-accent) / 0.25)"
+      stroke="var(--color-accent)"
+      opacity-25
     />
     <ACircle
       :rad="RAD"
@@ -68,7 +71,8 @@ watch(age, (age) => {
       :rotate="rotate + dashLength"
       :stroke-width="TICK"
       :dash-length="2"
-      stroke="oklch(var(--color-accent) / 0.25)"
+      stroke="var(--color-accent)"
+      opacity-25
     />
   </svg>
 </template>

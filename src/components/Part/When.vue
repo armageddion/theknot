@@ -43,7 +43,7 @@ const formulaHtml = computed(() => {
   top: -5%;
   left: -5%;
   z-index: -1;
-  background: oklch(var(--color-primary));
+  background: var(--color-primary);
   transform: rotate(0.4deg);
 }
 </style>
