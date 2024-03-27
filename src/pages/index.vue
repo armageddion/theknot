@@ -82,7 +82,7 @@ provide('bounding', bounding)
     <AFigure src="/slide/slide_11.jpg" style="--c: 5; --r: 16; --s: 2" aspect="4/3" />
     <AFigure src="/slide/slide_12.jpg" style="--c: 7; --r: 17; --s: 2" aspect-video />
 
-    <section id="what" :ref="refs.set" p-4 style="--s: 4; --c: 3; --r: 19">
+    <section id="what" :ref="refs.set" style="--s: 8; --c: 1; --r: 19" flex-center p-4 sm:pl-40>
       <PartWhat />
     </section>
 
