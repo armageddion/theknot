@@ -12,22 +12,17 @@ const RAD = 50
 const CIRC = radToCirc(RAD)
 const TICK = 3
 const HOUR = 360 / 12
-const _rotate = ref(HOUR * 4)
-const _dashLength = ref(HOUR * 4)
-const _strokeWidth = ref(RAD)
-const duration = 100
-const transition = easeInOutQuad
-const rotate = useTransition(_rotate, { duration, transition })
-const dashLength = useTransition(_dashLength, { duration, transition })
-const strokeWidth = useTransition(_strokeWidth, { duration, transition })
+const rotate = ref(HOUR * 4)
+const dashLength = ref(HOUR * 4)
+const strokeWidth = ref(RAD)
 
 watch(age, (age) => {
   const arrive = age < 40 ? 2 : 4
   const depart = 24 + Math.E - 2 / 15 * age + 3 - 12
-  const rotate = HOUR * arrive
-  const dashLength = HOUR * depart - rotate
-  _rotate.value = rotate
-  _dashLength.value = clamp(dashLength, HOUR * 4, 355)
+  const _rotate = HOUR * arrive
+  const _dashLength = HOUR * depart - _rotate
+  rotate.value = _rotate
+  dashLength.value = clamp(_dashLength, HOUR * 4, 355)
 }, { immediate: true })
 </script>
 
