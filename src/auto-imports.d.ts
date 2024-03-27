@@ -348,6 +348,8 @@ declare module 'vue' {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
+    readonly circToRad: UnwrapRef<typeof import('./utils/svg')['circToRad']>
+    readonly circleDefaults: UnwrapRef<typeof import('./utils/svg')['circleDefaults']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly computedAsync: UnwrapRef<typeof import('@vueuse/core')['computedAsync']>
     readonly computedEager: UnwrapRef<typeof import('@vueuse/core')['computedEager']>
@@ -371,6 +373,7 @@ declare module 'vue' {
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly defineLoader: UnwrapRef<typeof import('vue-router/auto')['defineLoader']>
     readonly definePage: UnwrapRef<typeof import('unplugin-vue-router/runtime')['_definePage']>
+    readonly degToCirc: UnwrapRef<typeof import('./utils/svg')['degToCirc']>
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
     readonly easeInBack: UnwrapRef<typeof import('./utils/easing')['easeInBack']>
     readonly easeInBounce: UnwrapRef<typeof import('./utils/easing')['easeInBounce']>
@@ -443,6 +446,8 @@ declare module 'vue' {
     readonly preferredDark: UnwrapRef<typeof import('./composables/dark')['preferredDark']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly provideLocal: UnwrapRef<typeof import('@vueuse/core')['provideLocal']>
+    readonly radToCirc: UnwrapRef<typeof import('./utils/svg')['radToCirc']>
+    readonly rand: UnwrapRef<typeof import('./utils/svg')['rand']>
     readonly reactify: UnwrapRef<typeof import('@vueuse/core')['reactify']>
     readonly reactifyObject: UnwrapRef<typeof import('@vueuse/core')['reactifyObject']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
@@ -459,9 +464,11 @@ declare module 'vue' {
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
     readonly resolveRef: UnwrapRef<typeof import('@vueuse/core')['resolveRef']>
     readonly resolveUnref: UnwrapRef<typeof import('@vueuse/core')['resolveUnref']>
+    readonly rotatePx: UnwrapRef<typeof import('./utils/svg')['rotatePx']>
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
+    readonly strokeDashArray: UnwrapRef<typeof import('./utils/svg')['strokeDashArray']>
     readonly syncRef: UnwrapRef<typeof import('@vueuse/core')['syncRef']>
     readonly syncRefs: UnwrapRef<typeof import('@vueuse/core')['syncRefs']>
     readonly templateRef: UnwrapRef<typeof import('@vueuse/core')['templateRef']>
@@ -671,6 +678,8 @@ declare module '@vue/runtime-core' {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
+    readonly circToRad: UnwrapRef<typeof import('./utils/svg')['circToRad']>
+    readonly circleDefaults: UnwrapRef<typeof import('./utils/svg')['circleDefaults']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly computedAsync: UnwrapRef<typeof import('@vueuse/core')['computedAsync']>
     readonly computedEager: UnwrapRef<typeof import('@vueuse/core')['computedEager']>
@@ -694,6 +703,7 @@ declare module '@vue/runtime-core' {
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly defineLoader: UnwrapRef<typeof import('vue-router/auto')['defineLoader']>
     readonly definePage: UnwrapRef<typeof import('unplugin-vue-router/runtime')['_definePage']>
+    readonly degToCirc: UnwrapRef<typeof import('./utils/svg')['degToCirc']>
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
     readonly easeInBack: UnwrapRef<typeof import('./utils/easing')['easeInBack']>
     readonly easeInBounce: UnwrapRef<typeof import('./utils/easing')['easeInBounce']>
@@ -766,6 +776,8 @@ declare module '@vue/runtime-core' {
     readonly preferredDark: UnwrapRef<typeof import('./composables/dark')['preferredDark']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly provideLocal: UnwrapRef<typeof import('@vueuse/core')['provideLocal']>
+    readonly radToCirc: UnwrapRef<typeof import('./utils/svg')['radToCirc']>
+    readonly rand: UnwrapRef<typeof import('./utils/svg')['rand']>
     readonly reactify: UnwrapRef<typeof import('@vueuse/core')['reactify']>
     readonly reactifyObject: UnwrapRef<typeof import('@vueuse/core')['reactifyObject']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
@@ -782,9 +794,11 @@ declare module '@vue/runtime-core' {
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
     readonly resolveRef: UnwrapRef<typeof import('@vueuse/core')['resolveRef']>
     readonly resolveUnref: UnwrapRef<typeof import('@vueuse/core')['resolveUnref']>
+    readonly rotatePx: UnwrapRef<typeof import('./utils/svg')['rotatePx']>
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
+    readonly strokeDashArray: UnwrapRef<typeof import('./utils/svg')['strokeDashArray']>
     readonly syncRef: UnwrapRef<typeof import('@vueuse/core')['syncRef']>
     readonly syncRefs: UnwrapRef<typeof import('@vueuse/core')['syncRefs']>
     readonly templateRef: UnwrapRef<typeof import('@vueuse/core')['templateRef']>
