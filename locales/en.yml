@@ -36,13 +36,14 @@ where:
 when:
   toc: When
   title: When to come and leave
-  description: |
+  descriptionA: |
     If you are capable of physical effort, congratulations! You are on build
     crew. You are expected at 1400h.
 
     If you don’t do manual labor or just want free booze and food, be there at
     1600h.
-
+  age: age
+  descriptionB: |
     To find out when you have to leave, enter you age into the above equation
     and do some maths.
 

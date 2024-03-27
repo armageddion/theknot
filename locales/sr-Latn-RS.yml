@@ -37,12 +37,13 @@ where:
 when:
   toc: Kada
   title: Kada doći a kada otići?
-  description: |
+  descriptionA: |
     Ako ste sposobni za fizički napor, čestitamo! Vi ste na timu koji će nam
     pomoći da se sve postavi i očekujemo vas u 14h.
 
     Ako niste sposobni ili samo želite da se provedete dođite u 16h.
-
+  age: god
+  descriptionB: |
     Ako želite da znate kada očekujemo da odete, morate da znate kompleksnu
     matematiku.
 
@@ -80,7 +81,7 @@ rsvp:
   toc: Potvrda
   title: Zapljunite se s'il vous plaît.
   description: |
-    U slučaju da želite da prisustvujete ovom veličanstvenom događaju, molimo 
+    U slučaju da želite da prisustvujete ovom veličanstvenom događaju, molimo
     vas da se zapljunete.
     Ako nam ne potvrdite vaše prisustvo, racunamo da nećete doći.
   link: Potrvrdite

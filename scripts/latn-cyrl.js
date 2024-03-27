@@ -8,6 +8,7 @@ const lock = [
   'meta.title',
   'where.links.gpx',
   'where.links.gmaps',
+  'when.age',
 ]
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const path = type => join(__dirname, '../locales', `sr-${type}-RS.yml`)
