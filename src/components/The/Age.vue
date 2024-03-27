@@ -9,7 +9,7 @@ const age = ref(MAX)
     <input
       v-model.number="age"
       mr-4 w-8 flex-auto outline-none
-      style="appearance: slider-vertical"
+      style="writing-mode: vertical-lr"
       type="range"
       :min="MIN"
       :max="MAX"
@@ -22,7 +22,7 @@ const age = ref(MAX)
       :max="MAX"
     >
   </div>
-  <div inline-block aspect-square max-w-80>
+  <div max-w-80 w-full>
     <TheClock :age />
   </div>
 </template>
