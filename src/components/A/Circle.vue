@@ -43,7 +43,7 @@ defineRender(() => h('circle', {
   'cx': props.rad,
   'cy': props.rad,
   'r': circToRad(props.circ),
-  'stroke': isDark.value ? 'white' : 'black',
+  // 'stroke': isDark.value ? 'white' : 'black',
   'stroke-width': props.strokeWidth,
   ...strokeDash.value,
   'style': {

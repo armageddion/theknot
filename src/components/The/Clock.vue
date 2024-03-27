@@ -1,14 +1,34 @@
 <script setup lang="ts">
+import { clamp } from '@vueuse/core'
+
+export interface ClockProps {
+  age?: number
+}
+
+const props = withDefaults(defineProps<ClockProps>(), { age: 65 })
+const age = toRef(props, 'age')
+
 const RAD = 50
 const CIRC = radToCirc(RAD)
-const duration = 800
-const transition = easeInOutCubic
-const _rotate = ref((360 / 12) * 4)
-const _dashLength = ref(150)
+const TICK = 3
+const HOUR = 360 / 12
+const _rotate = ref(HOUR * 4)
+const _dashLength = ref(HOUR * 4)
 const _strokeWidth = ref(RAD)
+const duration = 100
+const transition = easeInOutQuad
 const rotate = useTransition(_rotate, { duration, transition })
 const dashLength = useTransition(_dashLength, { duration, transition })
 const strokeWidth = useTransition(_strokeWidth, { duration, transition })
+
+watch(age, (age) => {
+  const arrive = age < 40 ? 2 : 4
+  const depart = 24 + Math.E - 2 / 15 * age + 3 - 12
+  const rotate = HOUR * arrive
+  const dashLength = HOUR * depart - rotate
+  _rotate.value = rotate
+  _dashLength.value = clamp(dashLength, HOUR * 4, 355)
+}, { immediate: true })
 </script>
 
 <template>
@@ -23,7 +43,7 @@ const strokeWidth = useTransition(_strokeWidth, { duration, transition })
       cx="50"
       cy="50"
       r="50"
-      :fill="isDark ? 'black' : 'white'"
+      fill="oklch(var(--color-accent) / 0.1)"
     />
     <ACircle
       :rad="RAD"
@@ -32,34 +52,23 @@ const strokeWidth = useTransition(_strokeWidth, { duration, transition })
       :stroke-width="strokeWidth"
       :dash-length="dashLength"
       :dash-center="false"
+      stroke="oklch(var(--color-secondary) / 0.25)"
     />
     <ACircle
       :rad="RAD"
-      :circ="CIRC * 1.25"
+      :circ="CIRC + 20"
       :rotate
-      :stroke-width="10"
-      :dash-length="1"
+      :stroke-width="TICK"
+      :dash-length="2"
+      stroke="oklch(var(--color-accent) / 0.25)"
     />
     <ACircle
       :rad="RAD"
-      :circ="CIRC * 1.25"
+      :circ="CIRC + 20"
       :rotate="rotate + dashLength"
-      :stroke-width="10"
-      :dash-length="1"
+      :stroke-width="TICK"
+      :dash-length="2"
+      stroke="oklch(var(--color-accent) / 0.25)"
     />
   </svg>
-  <input
-    v-model.number="_rotate"
-    mt-16
-    type="range"
-    :min="360 / 12 * 2"
-    :max="360 / 12 * 4"
-  >
-  <input
-    v-model.number="_dashLength"
-    mt-16
-    type="range"
-    min="150"
-    max="350"
-  >
 </template>
