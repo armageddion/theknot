@@ -3,13 +3,6 @@ import markdownit from 'markdown-it'
 
 const { t } = useI18n()
 const md = markdownit()
-
-function departTime(age: number) {
-  let result = 24 + Math.E - (2 / 15 * age) + 3
-  if (result > 24)
-    result = result - 24
-  return Math.round(result)
-}
 </script>
 
 <template>
@@ -20,8 +13,8 @@ function departTime(age: number) {
       </h2>
       <div max-w-md prose v-html="md.render(t('when.description'))" />
     </div>
-    <div lg="w-1/2" inline-block aspect-square max-w-80>
-      <TheClock />
+    <div lg="w-1/2" w-full flex gap-4>
+      <TheAge />
     </div>
   </div>
 </template>

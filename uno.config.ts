@@ -36,8 +36,8 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        head: 'Russo One',
-        sans: 'Play',
+        head: 'Rubik',
+        sans: 'Exo 2',
       },
     }),
   ],

@@ -17,6 +17,7 @@ declare module 'vue' {
     PartWhere: typeof import('./components/Part/Where.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TheAge: typeof import('./components/The/Age.vue')['default']
     TheClock: typeof import('./components/The/Clock.vue')['default']
     TheCountdown: typeof import('./components/The/Countdown.vue')['default']
     TheHeader: typeof import('./components/The/Header.vue')['default']
