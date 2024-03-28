@@ -5,6 +5,7 @@ defineOptions({
   name: 'IndexPage',
 })
 
+const { locale } = useI18n()
 const scroll = useSharedScroll()
 
 onMounted(() => {
@@ -29,6 +30,8 @@ onMounted(() => {
 
   refresh()
   window.addEventListener('resize', refresh)
+
+  watch(locale, () => lenis.resize())
 
   function raf(time: number) {
     lenis.raf(time)

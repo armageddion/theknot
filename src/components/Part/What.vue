@@ -2,6 +2,8 @@
 import markdownit from 'markdown-it'
 import wordcloud from 'wordcloud'
 
+const MIN = 18
+const RANGE = 16
 const { t, locale } = useI18n()
 const md = markdownit()
 const canvas = ref<HTMLCanvasElement>()
@@ -18,11 +20,14 @@ function refresh() {
     return
   const list = t('what.list')
     .split('\n')
-    .map(line => [line.replace('- ', ''), rand(16) + 18])
+    .map(line => [line.replace('- ', ''), rand(RANGE) + MIN])
   wordcloud(el, {
     list,
     backgroundColor: 'transparent',
-    color: 'var(--color-secondary)',
+    color: (_: any, weight: number) => {
+      const alpha = 100 - (weight / (MIN + RANGE)) * 100
+      return `color-mix(in oklab, var(--color-secondary), var(--color-primary) ${alpha}%)`
+    },
     fontFamily: 'Rubik',
     fontWeight: 700,
   })
@@ -37,7 +42,7 @@ function refresh() {
       </h2>
       <div max-w-md prose v-html="md.render(t('what.description'))" />
     </div>
-    <div lg="w-1/2 order-1" w-full flex items-center gap-8>
+    <div lg="w-1/2 order-1" w-full flex select-none items-center gap-8>
       <div ref="canvas" h-full w-full @click="refresh" />
     </div>
   </div>
