@@ -1,23 +1,27 @@
 <script setup lang="ts">
 import { clamp } from '@vueuse/core'
 
-const IMAGES = Array.from({ length: 35 }, (_, i) => `/slide/${i + 1}.jpg`)
-const VIDEOS = Array.from({ length: 7 }, (_, i) => `/slide/${99 - i}.mp4`)
+const props = defineProps<{
+  i: number
+  left?: boolean
+}>()
 
-const isVideo = ref(rand(4) === 0)
-const videoSrc = ref(VIDEOS[rand(VIDEOS.length - 1)])
-
-const { y } = useSharedScroll()
 const figure = ref<HTMLElement>()
+const { y } = useSharedScroll()
 const isVisible = useElementVisibility(figure, { threshold: 0 })
 
-const imgSrc = ref()
+const { feature, next } = useImages()
+const src = computed(() => feature.value[props.i])
+const isVideo = computed(() => src.value?.endsWith('.mp4'))
+
 const outerScale = ref(1)
 const innerScale = ref(5)
 
 const isLeft = computed(() => {
   if (!figure.value)
     return false
+  if (props.left)
+    return true
   const previousElementSibling = figure.value!.previousElementSibling as HTMLElement
   const isRight = previousElementSibling && (figure.value!.offsetLeft + figure.value!.offsetWidth <= previousElementSibling.offsetLeft + 1)
   return !isRight
@@ -32,17 +36,13 @@ const outerStyle = computed(() => {
 
 const innerStyle = computed(() => {
   return {
-    backgroundImage: `url(${imgSrc.value})`,
+    backgroundImage: `url(${src.value})`,
     transformOrigin: isLeft.value ? '0% 0%' : '100% 0%',
     transform: `scale(${innerScale.value})`,
   }
 })
 
-onMounted(randomize)
-
-watch([y, isVisible], ([y, isVisible], [_, wasVisible]) => {
-  if (wasVisible && !isVisible)
-    randomize()
+watch([y, isVisible], ([y, isVisible]) => {
   if (!isVisible || !figure.value)
     return
   const modTop = 0.2
@@ -53,18 +53,12 @@ watch([y, isVisible], ([y, isVisible], [_, wasVisible]) => {
   const offsetTop = winHeight * modTop
   const offsetBottom = winHeight * modBot
   const progress = 1 - (elTop - offsetTop) / (winHeight - elHeight - offsetBottom * 2)
-  const clamped = easeInOutQuad(clamp(progress, 0, 1))
+  const clamped = easeOutQuad(clamp(progress, 0, 1))
   outerScale.value = clamped
   const innerStart = 5
   const innerEnd = 1
   innerScale.value = innerStart - (innerStart - innerEnd) * clamped
 })
-
-function randomize() {
-  isVideo.value = rand(4) === 0
-  videoSrc.value = VIDEOS[rand(VIDEOS.length - 1)]
-  imgSrc.value = IMAGES[rand(IMAGES.length - 1)]
-}
 </script>
 
 <template>
@@ -73,7 +67,7 @@ function randomize() {
       :style="outerStyle"
       block h-full w-full transform-gpu overflow-hidden rounded-xl
       will-change-transform
-      @click="randomize"
+      @click="next(src)"
     >
       <span
         v-if="!isVideo"
@@ -83,10 +77,11 @@ function randomize() {
       />
       <video
         v-else
+        :style="innerStyle"
         autoplay loop muted playsinline
         block h-full w-full object-cover
         will-change-transform
-        :src="videoSrc"
+        :src="src"
       />
     </a>
   </figure>

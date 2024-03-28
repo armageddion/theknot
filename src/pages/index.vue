@@ -7,8 +7,9 @@ defineOptions({
 
 const { locale } = useI18n()
 const scroll = useSharedScroll()
+const { refresh } = useImages()
 
-onMounted(() => {
+onMounted(async () => {
   if (typeof document === 'undefined')
     return
 
@@ -19,24 +20,26 @@ onMounted(() => {
     smoothWheel: true,
     infinite: true,
   })
-
   lenis.on('scroll', (e: any) => {
     scroll.y.value = e.scroll
   })
+  watch(locale, () => lenis.resize())
 
-  const refresh = () => {
+  const restore = () => {
     window.history.scrollRestoration = 'manual'
   }
-
-  refresh()
-  window.addEventListener('resize', refresh)
-
-  watch(locale, () => lenis.resize())
+  restore()
+  window.addEventListener('resize', restore)
 
   function raf(time: number) {
     lenis.raf(time)
     requestAnimationFrame(raf)
   }
+})
+
+watch(scroll.y, (ny, oy) => {
+  if (ny < 1000 && oy >= 1000)
+    refresh()
 })
 
 const sections = ['welcome', 'where', 'when', 'what', 'gift', 'rsvp']
@@ -62,48 +65,61 @@ provide('bounding', bounding)
       <PartWelcome id="welcome" :ref="refs.set" text-lg />
     </section>
 
-    <AFigure style="--c: 2; --r: 4; --s: 4" aspect-video />
-    <AFigure style="--c: 6; --r: 5; --s: 3" aspect="4/3" />
-    <AFigure style="--c: 4; --r: 6; --s: 2" aspect-video />
-    <AFigure style="--c: 2; --r: 7; --s: 2" aspect-video />
+    <AFigure :i="0" style="--s: 4; --c: 2; --r: 2" aspect-video />
+    <AFigure :i="1" style="--s: 3; --c: 6; --r: 3" aspect="4/3" />
+    <AFigure :i="2" style="--s: 2; --c: 4; --r: 4" aspect-video />
+    <AFigure :i="3" style="--s: 2; --c: 2; --r: 5" aspect-video />
 
-    <section id="where" :ref="refs.set" style="--s: 8; --c: 1; --r: 8" my-80 flex-center p-4 sm:pl-40>
+    <section
+      id="where" :ref="refs.set"
+      style="--s: 8; --c: 1; --r: 10"
+      my-80 flex-center p-4 sm:pl-40
+    >
       <PartWhere />
     </section>
 
-    <AFigure style="--c: 1; --r: 9; --s: 3" aspect-video />
-    <AFigure style="--c: 4; --r: 10; --s: 2" aspect-video />
-    <AFigure style="--c: 6; --r: 11; --s: 2" aspect-video />
+    <AFigure :i="4" style="--s: 3; --c: 1; --r: 11" aspect-video />
+    <AFigure :i="5" style="--s: 2; --c: 4; --r: 12" aspect-video />
+    <AFigure :i="6" style="--s: 2; --c: 6; --r: 13" aspect-video />
 
-    <section id="when" :ref="refs.set" style="--s: 8; --c: 1; --r: 12" my-80 flex-center p-4 sm:pl-40>
+    <section
+      id="when" :ref="refs.set"
+      style="--s: 8; --c: 1; --r: 20"
+      my-80 flex-center p-4 sm:pl-40
+    >
       <PartWhen />
     </section>
 
-    <div h-24 style="--s: 8; --c: 1; --r: 13" />
-    <AFigure style="--c: 5; --r: 14; --s: 4" aspect-video />
-    <AFigure style="--c: 2; --r: 15; --s: 3" aspect-video />
-    <AFigure style="--c: 5; --r: 16; --s: 2" aspect="4/3" />
-    <AFigure style="--c: 7; --r: 17; --s: 2" aspect-video />
+    <AFigure :i="7" style="--s: 4; --c: 5; --r: 21" aspect-video />
+    <AFigure :i="8" style="--s: 3; --c: 2; --r: 22" aspect-video />
+    <AFigure :i="9" style="--s: 2; --c: 5; --r: 23" aspect="4/3" />
+    <!-- <AFigure style="--s: 2; --c: 7; --r: 24" aspect-video /> -->
 
-    <section id="what" :ref="refs.set" style="--s: 8; --c: 1; --r: 19" my-80 flex-center p-4 sm:pl-40 xl:pl-0>
+    <section
+      id="what" :ref="refs.set"
+      style="--s: 8; --c: 1; --r: 30"
+      my-80 flex-center p-4 sm:pl-40 xl:pl-0
+    >
       <PartWhat />
     </section>
 
-    <div h-24 style="--s: 8; --c: 1; --r: 20" />
-    <AFigure style="--c: 2; --r: 21; --s: 2" aspect-video />
-    <AFigure style="--c: 4; --r: 22; --s: 3" aspect-video />
-    <div h-24 style="--s: 8; --c: 1; --r: 23" />
+    <AFigure :i="10" style="--s: 2; --c: 1; --r: 31" aspect-video />
+    <AFigure :i="11" style="--s: 3; --c: 3; --r: 32" aspect-video />
+    <AFigure :i="12" style="--s: 2; --c: 6; --r: 33" aspect-video />
 
-    <section id="gift" :ref="refs.set" style="--s: 8; --c: 1; --r: 27" my-80 flex-center p-4 sm:pl-40 xl:pl-0>
+    <section
+      id="gift" :ref="refs.set"
+      style="--s: 8; --c: 1; --r: 40"
+      my-80 flex-center p-4 sm:pl-40 xl:pl-0
+    >
       <PartGift />
     </section>
 
-    <div h-24 style="--s: 8; --c: 1; --r: 28" />
+    <AFigure :i="13" style="--s: 4; --c: 5; --r: 41" aspect-video />
+    <AFigure :i="14" style="--s: 3; --c: 2; --r: 42" aspect-video />
+    <AFigure :i="15" style="--s: 2; --c: 5; --r: 43" left aspect-video />
 
-    <AFigure style="--c: 5; --r: 29; --s: 4" aspect-video />
-    <AFigure style="--c: 2; --r: 30; --s: 3" aspect-video />
-
-    <section style="--s: 8; --c: 1; --r: 31" my-80 flex-center p-4>
+    <section style="--s: 8; --c: 1; --r: 50" my-80 flex-center p-4>
       <PartRespond id="rsvp" :ref="refs.set" text-lg />
     </section>
   </div>
