@@ -47,10 +47,8 @@ watchEffect(() => {
     />
     <div
       ref="dragger"
-      absolute h-8 w-full flex-center cursor-pointer select-none rounded-xl bg-secondary
-      :style="[{
-        top: `${(1 - ((age - MIN) / (MAX - MIN))) * 100}%`,
-      }]"
+      absolute h-8 w-full flex-center cursor-pointer select-none rounded-xl bg-secondary will-change-top
+      :style="{ top: `${(1 - ((age - MIN) / (MAX - MIN))) * 100}%` }"
     >
       <span text-primary font-bold>{{ Math.round(age) }}</span>
     </div>

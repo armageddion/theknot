@@ -28,9 +28,9 @@ watchEffect(() => {
     relative
     :style="{ transform: `scale(${scale})` }"
     style="transform-origin: 33% 50%"
+    transform-gpu will-change-transform
   >
     <img src="/map.png" alt="An old map">
-
     <svg absolute left-0 top-0 viewBox="0 0 756 525" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         ref="path"
