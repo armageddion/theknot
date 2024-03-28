@@ -4,10 +4,10 @@ import wordcloud from 'wordcloud'
 
 const MIN = 18
 const RANGE = 16
-const { t, locale } = useI18n()
 const md = markdownit()
-const canvas = ref<HTMLCanvasElement>()
+const { t, locale } = useI18n()
 const { y } = useSharedScroll()
+const canvas = ref<HTMLElement>()
 const root = ref<HTMLElement>()
 const isVisible = useElementVisibility(root, { threshold: 0.9 })
 
@@ -42,8 +42,8 @@ function refresh() {
       </h2>
       <div max-w-md prose v-html="md.render(t('what.description'))" />
     </div>
-    <div lg="w-1/2 order-1" w-full flex select-none items-center gap-8>
-      <div ref="canvas" h-full w-full @click="refresh" />
+    <div lg="w-1/2 order-1" min-h-56 w-full flex select-none items-center gap-8>
+      <div ref="canvas" h-full min-h-56 w-full @click="refresh" />
     </div>
   </div>
 </template>

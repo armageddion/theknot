@@ -1,20 +1,19 @@
 <script setup lang="ts">
-const props = defineProps<{
-  footer?: boolean
-}>()
+const props = defineProps<{ footer?: boolean }>()
 
 const { t } = useI18n()
-
 const tag = computed(() => (props.footer ? 'footer' : 'header'))
-
 const el = ref<HTMLElement | null>(null)
 const bounds = useElementBounding(el)
-const scale = ref(1.25)
+const isLargeScreen = useLargeScreen()
+const scaleBase = computed(() => (isLargeScreen.value ? 1.25 : 2.25))
+const scale = ref(scaleBase.value)
+const titleHtml = computed(() => isLargeScreen.value ? t('meta.title') : t('meta.title').replace(/\s/g, '<br>'))
 
 function onScroll() {
   const offset = (bounds.top.value + bounds.height.value / 2 - window.innerHeight / 2) / (window.innerHeight)
   if (Math.abs(offset) < 1)
-    scale.value = 1.25 + offset * -0.35
+    scale.value = scaleBase.value + offset * -0.35
 }
 
 onMounted(() => {
@@ -43,11 +42,15 @@ onMounted(() => {
       <div absolute left-0 top-0 h-40 w-full from-white to-transparent bg-gradient-to-b />
       <div absolute bottom-0 left-0 h-40 w-full from-white to-transparent bg-gradient-to-t />
     </div>
-    <h1 text-secondary text="[4rem]" font-bold>
-      {{ t('meta.title') }}
-    </h1>
-    <p max-w-md>
-      {{ t('meta.description') }}
-    </p>
+    <div max-w-md>
+      <h1
+        text-secondary font-bold
+        text="[4rem]"
+        v-html="titleHtml"
+      />
+      <p max-w-md>
+        {{ t('meta.description') }}
+      </p>
+    </div>
   </component>
 </template>

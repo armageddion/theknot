@@ -7,6 +7,7 @@ export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
   const IMAGES: typeof import('./utils/constants')['IMAGES']
+  const SECTIONS: typeof import('./utils/constants')['SECTIONS']
   const VIDEOS: typeof import('./utils/constants')['VIDEOS']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
@@ -69,9 +70,10 @@ declare global {
   const easeOutSine: typeof import('./utils/easing')['easeOutSine']
   const effectScope: typeof import('vue')['effectScope']
   const extendRef: typeof import('@vueuse/core')['extendRef']
-  const getBoundsOffset: typeof import('./utils/offsets')['getBoundsOffset']
+  const getBoundsOffset: typeof import('./composables/shared')['getBoundsOffset']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
+  const goTo: typeof import('./composables/shared')['goTo']
   const h: typeof import('vue')['h']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
   const inject: typeof import('vue')['inject']
@@ -229,6 +231,7 @@ declare global {
   const useInterval: typeof import('@vueuse/core')['useInterval']
   const useIntervalFn: typeof import('@vueuse/core')['useIntervalFn']
   const useKeyModifier: typeof import('@vueuse/core')['useKeyModifier']
+  const useLargeScreen: typeof import('./composables/shared')['useLargeScreen']
   const useLastChanged: typeof import('@vueuse/core')['useLastChanged']
   const useLink: typeof import('vue-router/auto')['useLink']
   const useLocalStorage: typeof import('@vueuse/core')['useLocalStorage']
@@ -348,6 +351,7 @@ declare module 'vue' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly IMAGES: UnwrapRef<typeof import('./utils/constants')['IMAGES']>
+    readonly SECTIONS: UnwrapRef<typeof import('./utils/constants')['SECTIONS']>
     readonly VIDEOS: UnwrapRef<typeof import('./utils/constants')['VIDEOS']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
@@ -410,9 +414,10 @@ declare module 'vue' {
     readonly easeOutSine: UnwrapRef<typeof import('./utils/easing')['easeOutSine']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
-    readonly getBoundsOffset: UnwrapRef<typeof import('./utils/offsets')['getBoundsOffset']>
+    readonly getBoundsOffset: UnwrapRef<typeof import('./composables/shared')['getBoundsOffset']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly goTo: UnwrapRef<typeof import('./composables/shared')['goTo']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
@@ -570,6 +575,7 @@ declare module 'vue' {
     readonly useInterval: UnwrapRef<typeof import('@vueuse/core')['useInterval']>
     readonly useIntervalFn: UnwrapRef<typeof import('@vueuse/core')['useIntervalFn']>
     readonly useKeyModifier: UnwrapRef<typeof import('@vueuse/core')['useKeyModifier']>
+    readonly useLargeScreen: UnwrapRef<typeof import('./composables/shared')['useLargeScreen']>
     readonly useLastChanged: UnwrapRef<typeof import('@vueuse/core')['useLastChanged']>
     readonly useLink: UnwrapRef<typeof import('vue-router/auto')['useLink']>
     readonly useLocalStorage: UnwrapRef<typeof import('@vueuse/core')['useLocalStorage']>
@@ -682,6 +688,7 @@ declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly IMAGES: UnwrapRef<typeof import('./utils/constants')['IMAGES']>
+    readonly SECTIONS: UnwrapRef<typeof import('./utils/constants')['SECTIONS']>
     readonly VIDEOS: UnwrapRef<typeof import('./utils/constants')['VIDEOS']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
@@ -744,9 +751,10 @@ declare module '@vue/runtime-core' {
     readonly easeOutSine: UnwrapRef<typeof import('./utils/easing')['easeOutSine']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
-    readonly getBoundsOffset: UnwrapRef<typeof import('./utils/offsets')['getBoundsOffset']>
+    readonly getBoundsOffset: UnwrapRef<typeof import('./composables/shared')['getBoundsOffset']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly goTo: UnwrapRef<typeof import('./composables/shared')['goTo']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
@@ -904,6 +912,7 @@ declare module '@vue/runtime-core' {
     readonly useInterval: UnwrapRef<typeof import('@vueuse/core')['useInterval']>
     readonly useIntervalFn: UnwrapRef<typeof import('@vueuse/core')['useIntervalFn']>
     readonly useKeyModifier: UnwrapRef<typeof import('@vueuse/core')['useKeyModifier']>
+    readonly useLargeScreen: UnwrapRef<typeof import('./composables/shared')['useLargeScreen']>
     readonly useLastChanged: UnwrapRef<typeof import('@vueuse/core')['useLastChanged']>
     readonly useLink: UnwrapRef<typeof import('vue-router/auto')['useLink']>
     readonly useLocalStorage: UnwrapRef<typeof import('@vueuse/core')['useLocalStorage']>
