@@ -5,9 +5,8 @@ import { clamp } from '@vueuse/core'
 const { t } = useI18n()
 
 const bounding = inject('bounding') as ComputedRef<Record<string, UseElementBoundingReturn>>
-const sections = inject('sections') as string[]
 
-const links = ref(sections.map(key => ({
+const links = ref(SECTIONS.map(key => ({
   key,
   href: `#${key}`,
   offset: 0,
@@ -28,12 +27,6 @@ watchEffect(() => {
       link.swipe = swipe
     })
 })
-
-function goTo(href: string) {
-  const el = document.querySelector(href)
-  if (el)
-    el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-}
 </script>
 
 <template>

@@ -6,6 +6,7 @@ import 'katex/dist/katex.min.css'
 const { t } = useI18n()
 const md = markdownit()
 const formula = ref<HTMLElement>()
+const isLargeScreen = useLargeScreen()
 
 const formulaHtml = computed(() => {
   const f = `e{-\\left(\\frac{2}{15}\\mathit{${t('when.age')}}+3\\right)}`
@@ -28,7 +29,7 @@ const formulaHtml = computed(() => {
       />
       <div max-w-md prose v-html="md.render(t('when.descriptionB'))" />
     </div>
-    <div lg="w-1/2" w-full flex items-center gap-4 lg:gap-16>
+    <div v-if="isLargeScreen" lg="w-1/2" w-full flex items-center gap-4 lg:gap-16>
       <TheAge />
     </div>
   </div>
@@ -43,7 +44,11 @@ const formulaHtml = computed(() => {
   top: -5%;
   left: -5%;
   z-index: -1;
-  background: var(--color-primary);
+  background: color-mix(
+    in oklab,
+    var(--color-primary),
+    var(--color-content) 5%
+  );
   transform: rotate(0.4deg);
 }
 </style>

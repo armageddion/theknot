@@ -1,3 +1,4 @@
+lang: EN
 meta:
   title: The Littl3 Knot
   description: >
@@ -75,7 +76,7 @@ what:
     - varnish
     - donuts
     - ruler
-    - racket 
+    - racket
 gift:
   toc: Toaster
   title: We dont need a toaster.

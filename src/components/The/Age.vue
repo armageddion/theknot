@@ -13,6 +13,8 @@ const rangeBound = useElementBounding(range)
 
 useDraggable(dragger, {
   axis: 'y',
+  stopPropagation: true,
+  preventDefault: true,
   onMove: (_, event) => {
     const currPos = event.y
     const rangeTop = rangeBound.top.value
@@ -41,9 +43,9 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div ref="range" relative h-full w-8 flex justify-center>
+  <div ref="range" relative w-8 flex justify-center>
     <div
-      w-2 rounded bg-accent opacity-10
+      h="[20rem]" w-2 rounded bg-accent opacity-10
     />
     <div
       ref="dragger"
