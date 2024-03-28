@@ -109,7 +109,10 @@ export default defineConfig({
     }),
 
     // https://github.com/feat-agency/vite-plugin-webfont-dl
-    WebfontDownload(),
+    WebfontDownload([
+      'https://fonts.googleapis.com/css2?family=Rubik&display=swap',
+      'https://fonts.googleapis.com/css2?family=Exo+2&display=swap',
+    ]),
 
     // https://github.com/webfansplz/vite-plugin-vue-devtools
     VueDevTools(),

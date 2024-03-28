@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import markdownit from 'markdown-it'
-import wordcloud from 'wordcloud'
 
+let wordcloud: Function
 const MIN = 18
 const RANGE = 16
 const md = markdownit()
@@ -11,7 +11,12 @@ const canvas = ref<HTMLElement>()
 const root = ref<HTMLElement>()
 const isVisible = useElementVisibility(root, { threshold: 0.9 })
 
-onMounted(refresh)
+onMounted(async () => {
+  if (typeof window === 'undefined')
+    return
+  wordcloud = (await import('wordcloud')).default
+  refresh()
+})
 watchThrottled([y, locale], () => isVisible.value && refresh(), { throttle: 300 })
 
 function refresh() {
