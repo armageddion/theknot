@@ -3,8 +3,9 @@
   "private": true,
   "packageManager": "pnpm@8.15.4",
   "scripts": {
-    "build": "vite-ssg build",
     "dev": "vite --port 3333 --open",
+    "build": "vite-ssg build",
+    "deploy": "gh-pages -d dist",
     "cyrl": "node scripts/latn-cyrl.js",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -38,6 +39,7 @@
     "critters": "^0.0.21",
     "eslint": "^8.57.0",
     "eslint-plugin-format": "^0.1.0",
+    "gh-pages": "^6.1.1",
     "pnpm": "^8.15.4",
     "taze": "^0.13.3",
     "typescript": "^5.3.3",
