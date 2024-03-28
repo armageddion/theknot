@@ -12,6 +12,9 @@ html.light {
   --color-secondary: #678202;
   --color-accent: #917B02;
   --color-content: #030303;
+  --color-secondary: #862B0D;
+  --color-accent: #4D1908;
+  --color-content: #030303;  
 }
 
 html,
@@ -25,8 +28,8 @@ body,
 
 html {
   background: var(--color-primary);
-  background: color-mix(in oklab, var(--color-primary), #000 9%);
-  color: color-mix(in oklab, var(--color-accent), var(--color-content) 70%);
+  background: color-mix(in oklab, var(--color-primary), #000 0%);
+  color: color-mix(in oklab, var(--color-accent), var(--color-content) 90%);
 }
 
 html.dark {

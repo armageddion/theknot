@@ -62,10 +62,10 @@ provide('bounding', bounding)
       <PartWelcome id="welcome" :ref="refs.set" text-lg />
     </section>
 
-    <AFigure style="--c: 1; --r: 4; --s: 4" aspect-video />
-    <AFigure style="--c: 5; --r: 5; --s: 3" aspect="4/3" />
-    <AFigure style="--c: 3; --r: 6; --s: 2" aspect-video />
-    <AFigure style="--c: 1; --r: 7; --s: 2" aspect-video />
+    <AFigure style="--c: 2; --r: 4; --s: 4" aspect-video />
+    <AFigure style="--c: 6; --r: 5; --s: 3" aspect="4/3" />
+    <AFigure style="--c: 4; --r: 6; --s: 2" aspect-video />
+    <AFigure style="--c: 2; --r: 7; --s: 2" aspect-video />
 
     <section id="where" :ref="refs.set" style="--s: 8; --c: 1; --r: 8" my-80 flex-center p-4 sm:pl-40>
       <PartWhere />
@@ -90,8 +90,8 @@ provide('bounding', bounding)
     </section>
 
     <div h-24 style="--s: 8; --c: 1; --r: 20" />
-    <AFigure style="--c: 1; --r: 21; --s: 2" aspect-video />
-    <AFigure style="--c: 3; --r: 22; --s: 3" aspect-video />
+    <AFigure style="--c: 2; --r: 21; --s: 2" aspect-video />
+    <AFigure style="--c: 4; --r: 22; --s: 3" aspect-video />
     <div h-24 style="--s: 8; --c: 1; --r: 23" />
 
     <section id="gift" :ref="refs.set" style="--s: 8; --c: 1; --r: 27" my-80 flex-center p-4 sm:pl-40 xl:pl-0>
