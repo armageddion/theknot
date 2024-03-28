@@ -54,54 +54,54 @@ provide('bounding', bounding)
 
   <TheHero id="top" />
 
-  <div grid auto-rows-auto grid-cols-8 w-full gap-2 style="grid-template-rows: repeat(auto-fill, minmax(200px, 1fr))">
-    <section style="--s: 8; --c: 1; --r: 1" min-h-screen flex-center p-4>
-      <PartWelcome id="welcome" :ref="refs.set" />
+  <div grid auto-rows-auto grid-cols-8 w-full gap-2 overflow-hidden style="grid-template-rows: repeat(auto-fill, minmax(200px, 1fr))">
+    <section style="--s: 8; --c: 1; --r: 1" my-80 flex-center p-4>
+      <PartWelcome id="welcome" :ref="refs.set" text-lg />
     </section>
 
-    <AFigure src="/slide/slide_1.jpg" style="--c: 1; --r: 4; --s: 4" aspect-video />
-    <AFigure src="/slide/slide_3.jpg" style="--c: 5; --r: 5; --s: 3" aspect="4/3" />
-    <AFigure src="/slide/slide_2.jpg" style="--c: 3; --r: 6; --s: 2" aspect-video />
-    <AFigure src="/slide/slide_5.jpg" style="--c: 1; --r: 7; --s: 2" aspect-video />
+    <AFigure style="--c: 1; --r: 4; --s: 4" aspect-video />
+    <AFigure style="--c: 5; --r: 5; --s: 3" aspect="4/3" />
+    <AFigure style="--c: 3; --r: 6; --s: 2" aspect-video />
+    <AFigure style="--c: 1; --r: 7; --s: 2" aspect-video />
 
-    <section id="where" :ref="refs.set" style="--s: 8; --c: 1; --r: 8" my-32 flex-center p-4 sm:pl-40>
+    <section id="where" :ref="refs.set" style="--s: 8; --c: 1; --r: 8" my-80 flex-center p-4 sm:pl-40>
       <PartWhere />
     </section>
 
-    <AFigure src="/slide/slide_6.jpg" style="--c: 1; --r: 9; --s: 3" aspect-video />
-    <AFigure src="/slide/slide_7.jpg" style="--c: 4; --r: 10; --s: 2" aspect-video />
-    <AFigure src="/slide/slide_8.jpg" style="--c: 6; --r: 11; --s: 2" aspect-video />
+    <AFigure style="--c: 1; --r: 9; --s: 3" aspect-video />
+    <AFigure style="--c: 4; --r: 10; --s: 2" aspect-video />
+    <AFigure style="--c: 6; --r: 11; --s: 2" aspect-video />
 
-    <section id="when" :ref="refs.set" style="--s: 8; --c: 1; --r: 12" my-32 flex-center p-4 sm:pl-40>
+    <section id="when" :ref="refs.set" style="--s: 8; --c: 1; --r: 12" my-80 flex-center p-4 sm:pl-40>
       <PartWhen />
     </section>
 
-    <section h-24 style="--s: 8; --c: 1; --r: 13" />
-    <AFigure src="/slide/slide_9.jpg" style="--c: 5; --r: 14; --s: 4" aspect-video />
-    <AFigure src="/slide/slide_10.jpg" style="--c: 2; --r: 15; --s: 3" aspect-video />
-    <AFigure src="/slide/slide_11.jpg" style="--c: 5; --r: 16; --s: 2" aspect="4/3" />
-    <AFigure src="/slide/slide_12.jpg" style="--c: 7; --r: 17; --s: 2" aspect-video />
+    <div h-24 style="--s: 8; --c: 1; --r: 13" />
+    <AFigure style="--c: 5; --r: 14; --s: 4" aspect-video />
+    <AFigure style="--c: 2; --r: 15; --s: 3" aspect-video />
+    <AFigure style="--c: 5; --r: 16; --s: 2" aspect="4/3" />
+    <AFigure style="--c: 7; --r: 17; --s: 2" aspect-video />
 
-    <section id="what" :ref="refs.set" style="--s: 8; --c: 1; --r: 19" my-32 flex-center p-4 sm:pl-40 xl:pl-0>
+    <section id="what" :ref="refs.set" style="--s: 8; --c: 1; --r: 19" my-80 flex-center p-4 sm:pl-40 xl:pl-0>
       <PartWhat />
     </section>
 
-    <section h-24 style="--s: 8; --c: 1; --r: 20" />
-    <AFigure src="/slide/slide_13.jpg" style="--c: 1; --r: 21; --s: 2" aspect-video />
-    <AFigure src="/slide/slide_14.jpg" style="--c: 3; --r: 22; --s: 3" aspect-video />
-    <section h-24 style="--s: 8; --c: 1; --r: 23" />
+    <div h-24 style="--s: 8; --c: 1; --r: 20" />
+    <AFigure style="--c: 1; --r: 21; --s: 2" aspect-video />
+    <AFigure style="--c: 3; --r: 22; --s: 3" aspect-video />
+    <div h-24 style="--s: 8; --c: 1; --r: 23" />
 
-    <section id="gift" :ref="refs.set" style="--s: 8; --c: 1; --r: 27" my-32 flex-center p-4 sm:pl-40 xl:pl-0>
+    <section id="gift" :ref="refs.set" style="--s: 8; --c: 1; --r: 27" my-80 flex-center p-4 sm:pl-40 xl:pl-0>
       <PartGift />
     </section>
 
-    <section h-24 style="--s: 8; --c: 1; --r: 28" />
+    <div h-24 style="--s: 8; --c: 1; --r: 28" />
 
-    <AFigure src="/slide/slide_9.jpg" style="--c: 5; --r: 29; --s: 4" aspect-video />
-    <AFigure src="/slide/slide_10.jpg" style="--c: 2; --r: 30; --s: 3" aspect-video />
+    <AFigure style="--c: 5; --r: 29; --s: 4" aspect-video />
+    <AFigure style="--c: 2; --r: 30; --s: 3" aspect-video />
 
-    <section style="--s: 8; --c: 1; --r: 31" min-h-screen flex-center p-4>
-      <PartRespond id="rsvp" :ref="refs.set" />
+    <section style="--s: 8; --c: 1; --r: 31" my-80 flex-center p-4>
+      <PartRespond id="rsvp" :ref="refs.set" text-lg />
     </section>
   </div>
 
@@ -135,6 +135,28 @@ section {
     background: var(--color-accent);
     opacity: 0.1;
     transform: rotate(-0.8deg);
+  }
+}
+
+[grid] > section:not(:first-child, :last-child) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    z-index: -1;
+    transform: rotate(0.4deg);
+    background: var(--color-secondary);
+    opacity: 0.04;
+  }
+}
+.dark {
+  [grid] > section::before {
+    opacity: 0.0125;
   }
 }
 </style>

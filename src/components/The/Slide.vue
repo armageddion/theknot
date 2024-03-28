@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const images = Array
   .from({ length: 35 }, (_, i) => i + 1)
-  .map(i => `/slide/slide_${i}.jpg`)
+  .map(i => `/slide/${i}.jpg`)
 
 const route = useRoute()
 const { next, prev, index } = useCycleList(images)

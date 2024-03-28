@@ -35,7 +35,7 @@ onMounted(() => {
       :class="isDark ? 'opacity-25' : 'opacity-10'"
       mix-blend-multiply
       will-change="background-size"
-      style="background-image: url('/slide/slide_4.jpg')"
+      style="background-image: url('/slide/4.jpg')"
       :style="{
         backgroundSize: `${scale * 100}%`,
       }"
