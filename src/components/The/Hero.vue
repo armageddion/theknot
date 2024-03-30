@@ -44,7 +44,7 @@ onMounted(() => {
     </div>
     <div max-w-md>
       <h1
-        text-secondary font-bold
+        text-nowrap text-secondary font-bold
         text="[4rem]"
         v-html="titleHtml"
       />

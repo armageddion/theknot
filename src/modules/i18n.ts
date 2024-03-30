@@ -15,6 +15,13 @@ const localesMap = Object.fromEntries(
     .map(([path, loadLocale]) => [path.match(/([\w-]*)\.yml$/)?.[1], loadLocale]),
 ) as Record<Locale, () => Promise<{ default: Record<string, string> }>>
 
+function fallback(lang: string) {
+  return {
+    sh: 'sr-Latn-RS',
+    sr: 'sr-Cyrl-RS',
+  }[lang.split('-')[0]] || 'en'
+}
+
 export const availableLocales = Object.keys(localesMap)
 
 const loadedLanguages: string[] = []
@@ -35,6 +42,10 @@ export async function loadLanguageAsync(lang: string): Promise<Locale> {
   if (loadedLanguages.includes(lang))
     return setI18nLanguage(lang)
 
+  // If the language is not in localesMap
+  if (!Object.keys(localesMap).includes(lang))
+    lang = fallback(lang)
+
   // If the language hasn't been loaded yet
   const messages = await localesMap[lang]()
   i18n.global.setLocaleMessage(lang, messages.default)
@@ -44,5 +55,6 @@ export async function loadLanguageAsync(lang: string): Promise<Locale> {
 
 export const install: UserModule = ({ app }) => {
   app.use(i18n)
-  loadLanguageAsync('en')
+  const lang = typeof navigator !== 'undefined' ? navigator.language : 'en'
+  loadLanguageAsync(lang)
 }
