@@ -11,6 +11,7 @@ const lock = [
   'when.age',
   'when.descriptionA',
   'rsvp.title',
+  'gift.description',
 ]
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const path = type => join(__dirname, '../locales', `sr-${type}-RS.yml`)

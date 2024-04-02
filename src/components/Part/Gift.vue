@@ -12,7 +12,7 @@ const isLargeScreen = useLargeScreen()
       <h2 my-3 text-4xl text-secondary>
         {{ t('gift.title') }}
       </h2>
-      <div max-w-md prose v-html="md.render(t('gift.description'))" />
+      <div max-w-md prose v-html="md.render(t('gift.description', { venmo, paypal }))" />
     </div>
     <template v-if="isLargeScreen">
       <img
