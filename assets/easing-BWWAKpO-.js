@@ -1,0 +1,1 @@
+function a(e){return e*(2-e)}function r(e){return e<.5?2*e*e:-1+(4-2*e)*e}function s(e){return e<.5?4*e*e*e:(e-1)*(2*e-2)*(2*e-2)+1}function c(e){if(e===0||e===1)return e;const n=e*2,u=n-1;return n<1?.5*2**(10*u):.5*(-(2**(-10*u))+2)}export{a,s as b,c,r as e};
