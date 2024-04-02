@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "typecheck": "vue-tsc --noEmit",
     "up": "taze major -I",
-    "sizecheck": "npx vite-bundle-visualizer"
+    "sizecheck": "npx vite-bundle-visualizer",
+    "imgs": "cd public/media/lg && for file in *.jpg; do ffmpeg -y -i \"$file\" -vf \"scale=1080:-1\" -q:v 2 -map_metadata 0 \"../md/${file%.jpg}.jpg\"; done"
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.39",

@@ -36,13 +36,14 @@ const outerStyle = computed(() => {
 
 const innerStyle = computed(() => {
   return {
-    backgroundImage: `url(${src.value})`,
     transformOrigin: isLeft.value ? '0% 0%' : '100% 0%',
     transform: `scale(${innerScale.value})`,
   }
 })
 
-watch([y, isVisible], ([y, isVisible]) => {
+watch([y, isVisible], ([y, isVisible], [_, wasVisible]) => {
+  if (wasVisible && !isVisible)
+    next(src)
   if (!isVisible || !figure.value)
     return
   const modTop = 0.2
@@ -69,20 +70,28 @@ watch([y, isVisible], ([y, isVisible]) => {
       will-change-transform
       @click="next(src)"
     >
-      <span
-        v-if="!isVideo"
-        :style="innerStyle"
-        block h-full w-full bg-cover bg-center
-        will-change-transform
-      />
-      <video
-        v-else
-        :style="innerStyle"
-        autoplay loop muted playsinline
-        block h-full w-full object-cover
-        will-change-transform
-        :src="src"
-      />
+      <transition
+        enter-active-class=""
+        enter-from-class=""
+        enter-to-class=""
+        leave-active-class=""
+        leave-from-class=""
+        leave-to-class=""
+      >
+        <div :key="src" :style="innerStyle" h-full w-full>
+          <img
+            v-if="!isVideo"
+            block h-full w-full object-cover object-center will-change-transform
+            :src="src"
+          >
+          <video
+            v-else
+            autoplay loop muted playsinline
+            block h-full w-full object-cover object-center will-change-transform
+            :src="src"
+          />
+        </div>
+      </transition>
     </a>
   </figure>
 </template>

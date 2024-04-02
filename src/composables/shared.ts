@@ -13,8 +13,16 @@ export function getBoundsOffset(el: UseElementBoundingReturn, height: number) {
   return (el.top.value + el.height.value / 2 - height / 2) / (el.height.value * 2)
 }
 
-export function goTo(href: string, block: ScrollLogicalPosition = 'center') {
-  const el = document.querySelector(href)
-  if (el)
-    el.scrollIntoView({ behavior: 'smooth', block })
+export function goTo(href: string) {
+  const { lenis } = useLenisScroll()
+  const el = document.querySelector(href) as HTMLElement
+  if (el && lenis.value) {
+    const bounds = el.getBoundingClientRect()
+    const elCenter = bounds.top + bounds.height / 2 + window.scrollY - window.innerHeight / 2
+    // const elCenter = el.offsetTop + el.offsetHeight / 2 - window.innerHeight / 2
+    lenis.value.scrollTo(elCenter, {
+      duration: 4,
+      easing: easeInOutCubic,
+    })
+  }
 }

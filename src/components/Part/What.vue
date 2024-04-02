@@ -10,14 +10,23 @@ const { y } = useSharedScroll()
 const canvas = ref<HTMLElement>()
 const root = ref<HTMLElement>()
 const isVisible = useElementVisibility(root, { threshold: 0.9 })
+const cloudItems = ref<any>([])
 
 onMounted(async () => {
   if (typeof window === 'undefined')
     return
   wordcloud = (await import('wordcloud')).default
   refresh()
+  canvas.value?.addEventListener('wordclouddrawn', (event) => {
+    // @ts-expect-error hush
+    ;[...event.target?.children || []].forEach((child, i) => {
+      const style = child.style.cssText
+      cloudItems.value[i] = { style, text: child.textContent }
+    })
+  })
 })
-watchThrottled([y, locale], () => isVisible.value && refresh(), { throttle: 300 })
+watchThrottled([y, locale], () =>
+  isVisible.value && refresh(), { throttle: 800 })
 
 function refresh() {
   const el = canvas.value
@@ -40,15 +49,25 @@ function refresh() {
 </script>
 
 <template>
-  <div ref="root" max-w-6xl w-full flex flex-col gap-6 lg:flex-row lg:gap-16>
-    <div w-full lg="w-1/2 order-2">
+  <div ref="root" max-w-6xl w-full flex flex-col items-center gap-6 lg:flex-row lg:gap-16>
+    <div lg="w-1/2" w-full w-max>
       <h2 my-3 text-4xl text-secondary>
         {{ t('what.title') }}
       </h2>
       <div max-w-md prose v-html="md.render(t('what.description'))" />
     </div>
-    <div lg="w-1/2 order-1" min-h-56 w-full flex select-none items-center gap-8>
-      <div ref="canvas" h-full min-h-56 w-full @click="refresh" />
+    <div lg="w-1/2 " relative min-h-56 w-full flex select-none items-center gap-8>
+      <div ref="canvas" class="absolute!" invisible h-full min-h-56 w-full @click="refresh" />
+      <div relative h-full min-h-56 w-full cursor-pointer @click="refresh">
+        <span
+          v-for="{ style, text }, i in cloudItems"
+          :key="i"
+          transition-all
+          transition-duration-400
+          :style
+          v-text="text"
+        />
+      </div>
     </div>
   </div>
 </template>

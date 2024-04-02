@@ -42,7 +42,7 @@ watchEffect(() => {
           :key="link.href"
         >
           <a
-            relative block w-full rounded-lg py-1
+            relative block w-full py-1
             hover="opacity-100! bg-opacity-40!"
             transition="opacity bg-opacity"
             transition-duration-300

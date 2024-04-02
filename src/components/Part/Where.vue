@@ -9,8 +9,8 @@ const tail = md.render(t('where.description').split('\n\n').pop() as string)
 </script>
 
 <template>
-  <div max-w-6xl w-full flex flex-col gap-6 lg:flex-row lg:gap-16>
-    <div class="order-1 w-full lg:order-2 lg:w-1/2">
+  <div max-w-6xl w-full flex flex-col items-center gap-6 lg:flex-row lg:gap-16>
+    <div class="lg:w-1/2" w-full w-max>
       <h2 my-3 text-4xl text-secondary>
         {{ t('where.title') }}
       </h2>
@@ -38,10 +38,10 @@ const tail = md.render(t('where.description').split('\n\n').pop() as string)
         </div>
       </template>
     </div>
-    <div class="order-2 w-full lg:order-1 lg:w-1/2" max-w-lg overflow-hidden>
+    <div class="w-full lg:w-1/2" max-w-lg overflow-hidden>
       <TheMap />
     </div>
-    <div v-if="!isLargeScreen" order-3>
+    <div v-if="!isLargeScreen" w-full>
       <div max-w-lg prose v-html="tail" />
       <div flex gap-4>
         <a

@@ -1,39 +1,13 @@
 <script setup lang="ts">
-import Lenis from '@studio-freight/lenis'
-
 defineOptions({
   name: 'IndexPage',
 })
 
-const { locale } = useI18n()
-const scroll = useSharedScroll()
-const { reload } = useImages()
 const isLargeScreen = useLargeScreen()
+const { init } = useLenisScroll()
 
 onMounted(async () => {
-  if (typeof document === 'undefined')
-    return
-  const lenis = new Lenis({
-    wrapper: document.body,
-    smoothWheel: true,
-    syncTouch: true,
-    infinite: true,
-  })
-  lenis.on('scroll', (e: any) => (scroll.y.value = e.scroll))
-  watch(locale, () => lenis.resize())
-  const restore = () => (window.history.scrollRestoration = 'manual')
-  window.addEventListener('resize', restore)
-  requestAnimationFrame(raf)
-  restore()
-  function raf(time: number) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-  }
-})
-
-watch(scroll.y, (ny, oy) => {
-  if (ny < 1000 && oy > 1000)
-    reload()
+  init()
 })
 
 const refs = useTemplateRefsList<HTMLElement>()

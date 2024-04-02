@@ -16,16 +16,10 @@ export const useImages = createSharedComposable(() => {
     return next
   }
 
-  function reload() {
-    reserve.value = [...IMAGES, ...VIDEOS].sort(() => Math.random() - 0.5)
-    feature.value = Array.from({ length }, () => reserve.value.pop() as string)
-  }
-
   return {
     promises,
     reserve,
     feature,
     next,
-    reload,
   }
 })
