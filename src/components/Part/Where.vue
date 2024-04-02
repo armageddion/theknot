@@ -10,7 +10,7 @@ const tail = md.render(t('where.description').split('\n\n').pop() as string)
 
 <template>
   <div max-w-6xl w-full flex flex-col items-center gap-6 lg:flex-row lg:gap-16>
-    <div class="lg:w-1/2" w-full w-max>
+    <div class="lg:w-1/2" w-full sm:w-max>
       <h2 my-3 text-4xl text-secondary>
         {{ t('where.title') }}
       </h2>

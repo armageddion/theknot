@@ -15,13 +15,16 @@ export function getBoundsOffset(el: UseElementBoundingReturn, height: number) {
 
 export function goTo(href: string) {
   const { lenis } = useLenisScroll()
+  const isLargeScreen = useLargeScreen()
   const el = document.querySelector(href) as HTMLElement
   if (el && lenis.value) {
     const bounds = el.getBoundingClientRect()
     const elCenter = bounds.top + bounds.height / 2 + window.scrollY - window.innerHeight / 2
-    // const elCenter = el.offsetTop + el.offsetHeight / 2 - window.innerHeight / 2
-    lenis.value.scrollTo(elCenter, {
-      duration: 4,
+    const elTop = bounds.top + window.scrollY
+    const target = isLargeScreen.value ? elCenter : elTop - 64
+    const duration = isLargeScreen.value ? 4 : 1
+    lenis.value.scrollTo(target, {
+      duration,
       easing: easeInOutCubic,
     })
   }

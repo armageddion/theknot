@@ -50,7 +50,7 @@ function refresh() {
 
 <template>
   <div ref="root" max-w-6xl w-full flex flex-col items-center gap-6 lg:flex-row lg:gap-16>
-    <div lg="w-1/2" w-full w-max>
+    <div lg="w-1/2" w-full sm:w-max>
       <h2 my-3 text-4xl text-secondary>
         {{ t('what.title') }}
       </h2>
