@@ -1,4 +1,4 @@
-const o={lang:e=>{const{normalize:n}=e;return n(["EN"])},meta:{title:e=>{const{normalize:n}=e;return n(["The Littl3 Knot"])},description:e=>{const{normalize:n}=e;return n([`Everything you never fantasized you didn’t need to know and even something that is probably essential.
+const r={lang:e=>{const{normalize:n}=e;return n(["EN"])},meta:{title:e=>{const{normalize:n}=e;return n(["The Littl3 Knot"])},description:e=>{const{normalize:n}=e;return n([`Everything you never fantasized you didn’t need to know and even something that is probably essential.
 `])}},"not-found":e=>{const{normalize:n}=e;return n(["Not found"])},button:{toggle_dark_on:e=>{const{normalize:n}=e;return n(["Dark mode"])},toggle_dark_off:e=>{const{normalize:n}=e;return n(["Light mode"])},toggle_langs:e=>{const{normalize:n}=e;return n(["Change language"])}},welcome:{toc:e=>{const{normalize:n}=e;return n(["Welcome"])},title:e=>{const{normalize:n}=e;return n(["Welcome, dear hoomans"])},description:e=>{const{normalize:n}=e;return n([`We have decided to celebrate our love for each other with you - a small group
 of closest family members and dear friends. Grace us with your presence if you dare
 and make our celebration a little bit better than it would've been without yous.
@@ -45,13 +45,13 @@ Our warm recommendations are to not bring the following items:
 - donuts
 - ruler
 - racket
-`])}},gift:{toc:e=>{const{normalize:n}=e;return n(["Toaster"])},title:e=>{const{normalize:n}=e;return n(["We dont need a toaster."])},description:e=>{const{normalize:n}=e;return n([`We intend to remember this day for the rest of time, or at least, our
+`])}},gift:{toc:e=>{const{normalize:n}=e;return n(["Toaster"])},title:e=>{const{normalize:n}=e;return n(["We dont need a toaster."])},description:e=>{const{normalize:n,interpolate:o,named:t}=e;return n([`We intend to remember this day for the rest of time, or at least, our
 lives. If you insist on gifting something that might help us remember this
 day for a long time to come, do feel encouraged. If, however, you feel like
 bribing us to turn the other cheek to the fact that you haven’t brought a
-thoughtful gift, you can use the helpful [Venmo]() & [Paypal]() links to
-make your contribution; or, if you are a dinosaur, we will accept that
-archaic ritual of gifting a paper envelope.
+thoughtful gift, you can use the helpful [Venmo](`,o(t("venmo")),`) &
+[Paypal](`,o(t("paypal")),`) links to make your contribution; or, if you are a
+dinosaur, we will accept that archaic ritual of gifting a paper envelope.
 `])}},rsvp:{toc:e=>{const{normalize:n}=e;return n(["RSVP"])},title:e=>{const{normalize:n}=e;return n(["RSVP"])},description:e=>{const{normalize:n}=e;return n([`If you wish to join us in this marvelous event, please confirm your attendance.
 If you fail to confirm attendance, you will be banished!
-`])},link:e=>{const{normalize:n}=e;return n(["Confirm attendance"])}}};export{o as default};
+`])},link:e=>{const{normalize:n}=e;return n(["Confirm attendance"])}}};export{r as default};

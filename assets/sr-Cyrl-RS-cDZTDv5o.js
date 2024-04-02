@@ -1,4 +1,4 @@
-const e={lang:n=>{const{normalize:r}=n;return r(["СР"])},meta:{title:n=>{const{normalize:r}=n;return r(["Литтл3 Свадба"])},description:n=>{const{normalize:r}=n;return r([`Све што никада нисте маштали да не морате да знате, па можда чак и нешто што је вероватно неопходно.
+const t={lang:n=>{const{normalize:r}=n;return r(["СР"])},meta:{title:n=>{const{normalize:r}=n;return r(["Литтл3 Свадба"])},description:n=>{const{normalize:r}=n;return r([`Све што никада нисте маштали да не морате да знате, па можда чак и нешто што је вероватно неопходно.
 `])}},"not-found":n=>{const{normalize:r}=n;return r(["Непостојећа страница"])},button:{toggle_dark_on:n=>{const{normalize:r}=n;return r(["Потамни"])},toggle_dark_off:n=>{const{normalize:r}=n;return r(["Посветли"])},toggle_langs:n=>{const{normalize:r}=n;return r(["Промени језик"])}},welcome:{toc:n=>{const{normalize:r}=n;return r(["Добро дошли"])},title:n=>{const{normalize:r}=n;return r(["Добро дошли драги људи"])},description:n=>{const{normalize:r}=n;return r([`Ми смо одлучили да прославимо нашу љубав коју гајимо једно према другом са
 вама - малом групом најближе родбине и драгих пријатеља. Обасјајте нас
 вашом појавом и учините наше славље мало бољим него што би било без вас.
@@ -43,14 +43,14 @@ const e={lang:n=>{const{normalize:r}=n;return r(["СР"])},meta:{title:n=>{const
 - крофне
 - лењир
 - рекет
-`])}},gift:{toc:n=>{const{normalize:r}=n;return r(["Тостер"])},title:n=>{const{normalize:r}=n;return r(["Не треба нам тостер."])},description:n=>{const{normalize:r}=n;return r([`Ми желимо и планирамо да памтимо овај дан до краја времена, или барем наших
+`])}},gift:{toc:n=>{const{normalize:r}=n;return r(["Тостер"])},title:n=>{const{normalize:r}=n;return r(["Не треба нам тостер."])},description:n=>{const{normalize:r,interpolate:e,named:o}=n;return r([`Ми желимо и планирамо да памтимо овај дан до краја времена, или барем наших
 живота. Ако инсистирате да нам поклоните нешто што би нам помогло да
 упамтимо овај дан, осећајте се орхабреним. Ако, ипак, рачунате да можете да
 нас подмитите да игноришемо чињеницу да нам нисте донели промишљен
-поклон, можете да користите [Венмо]() или [ПаyПал]() линк за ваш допринос;
-или ако сте диносаурус, прихватићемо и онај архаични ритуал који је везан
-за папирну коверту.
+поклон, можете да користите [Венмо](`,e(o("venmo")),") или [ПаyПал](",e(o("paypal")),`) линк за
+ваш допринос; или ако сте диносаурус, прихватићемо и онај архаични ритуал
+који је везан за папирну коверту.
 `])}},rsvp:{toc:n=>{const{normalize:r}=n;return r(["Потврда"])},title:n=>{const{normalize:r}=n;return r(["Запљуните се плиз"])},description:n=>{const{normalize:r}=n;return r([`У случају да желите да присуствујете овом величанственом догађају, молимо
 вас да се запљунете.
 Ако нам не потврдите ваше присуство, рачунамо да нећете доћи.
-`])},link:n=>{const{normalize:r}=n;return r(["Потрврдите"])}}};export{e as default};
+`])},link:n=>{const{normalize:r}=n;return r(["Потрврдите"])}}};export{t as default};
