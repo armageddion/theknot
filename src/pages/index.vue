@@ -14,13 +14,16 @@ const refs = useTemplateRefsList<HTMLElement>()
 const bounding = computed(() => Object.fromEntries(
   SECTIONS.map((label, i) => [
     label,
-    useElementBounding(refs.value[i]),
+    refs.value[i]
+      ? useElementBounding(refs.value[i])
+      : undefined,
   ]),
 ))
 provide('bounding', bounding)
 </script>
 
 <template>
+  <TheHeader />
   <TheToc v-if="isLargeScreen" />
   <TheHero id="top" p-4 />
   <div
