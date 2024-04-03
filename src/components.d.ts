@@ -23,6 +23,7 @@ declare module 'vue' {
     TheHeader: typeof import('./components/The/Header.vue')['default']
     TheHero: typeof import('./components/The/Hero.vue')['default']
     TheMap: typeof import('./components/The/Map.vue')['default']
+    TheScroller: typeof import('./components/The/Scroller.vue')['default']
     TheSlide: typeof import('./components/The/Slide.vue')['default']
     TheToc: typeof import('./components/The/Toc.vue')['default']
   }

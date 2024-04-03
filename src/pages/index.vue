@@ -30,7 +30,7 @@ provide('bounding', bounding)
     grid auto-rows-auto grid-cols-8 w-full gap-2 overflow-hidden
     style="grid-template-rows: repeat(auto-fill, minmax(200px, 1fr))"
   >
-    <section style="--s: 8; --c: 1; --r: 1" my-24 flex-center p-4 sm:my-80>
+    <section style="--r: 1" my-24 flex-center p-4 sm:my-80>
       <PartWelcome id="welcome" :ref="refs.set" p-4 text-lg />
     </section>
     <template v-if="isLargeScreen">
@@ -39,8 +39,9 @@ provide('bounding', bounding)
       <AFigure :i="2" style="--s: 2; --c: 4; --r: 4" aspect-video />
       <AFigure :i="3" style="--s: 2; --c: 2; --r: 5" aspect-video />
     </template>
+    <TheScroller v-else style="--r: 2" />
     <section
-      id="where" :ref="refs.set" style="--s: 8; --c: 1; --r: 10"
+      id="where" :ref="refs.set" style="--r: 10"
       my-24 flex-center p-4 sm:my-80 sm:pl-40
     >
       <PartWhere />
@@ -50,8 +51,9 @@ provide('bounding', bounding)
       <AFigure :i="5" style="--s: 2; --c: 4; --r: 12" aspect-video />
       <AFigure :i="6" style="--s: 2; --c: 6; --r: 13" aspect-video />
     </template>
+    <TheScroller v-else style="--r: 11" />
     <section
-      id="when" :ref="refs.set" style="--s: 8; --c: 1; --r: 20"
+      id="when" :ref="refs.set" style="--r: 20"
       my-24 flex-center p-4 sm:my-80 sm:pl-40
     >
       <PartWhen />
@@ -61,8 +63,9 @@ provide('bounding', bounding)
       <AFigure :i="8" style="--s: 3; --c: 2; --r: 22" aspect-video />
       <AFigure :i="9" style="--s: 2; --c: 5; --r: 23" aspect="4/3" />
     </template>
+    <TheScroller v-else style="--r: 21" />
     <section
-      id="what" :ref="refs.set" style="--s: 8; --c: 1; --r: 30"
+      id="what" :ref="refs.set" style="--r: 30"
       my-24 flex-center p-4 sm:my-80 sm:pl-40 xl:pl-0
     >
       <PartWhat />
@@ -72,8 +75,9 @@ provide('bounding', bounding)
       <AFigure :i="11" style="--s: 3; --c: 3; --r: 32" aspect-video />
       <AFigure :i="12" style="--s: 2; --c: 6; --r: 33" aspect-video />
     </template>
+    <TheScroller v-else style="--r: 31" />
     <section
-      id="gift" :ref="refs.set" style="--s: 8; --c: 1; --r: 40"
+      id="gift" :ref="refs.set" style="--r: 40"
       my-24 flex-center p-4 sm:my-80 sm:pl-40 xl:pl-0
     >
       <PartGift />
@@ -83,7 +87,8 @@ provide('bounding', bounding)
       <AFigure :i="14" style="--s: 3; --c: 2; --r: 42" aspect-video />
       <AFigure :i="15" style="--s: 2; --c: 5; --r: 43" left aspect-video />
     </template>
-    <section style="--s: 8; --c: 1; --r: 50" my-24 flex-center p-4 sm:my-80>
+    <TheScroller v-else style="--r: 41" />
+    <section style="--r: 50" my-24 flex-center p-4 sm:my-80>
       <PartRespond id="rsvp" :ref="refs.set" p-4 text-lg />
     </section>
   </div>
@@ -98,7 +103,7 @@ meta:
 
 <style>
 section {
-  grid-column: var(--c) / span var(--s);
+  grid-column: var(--c, 1) / span var(--s, 8);
   grid-row: var(--r);
   position: relative;
 
