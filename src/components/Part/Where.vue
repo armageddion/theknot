@@ -5,7 +5,7 @@ const md = markdownit()
 const { t } = useI18n()
 const isLargeScreen = useLargeScreen()
 const desc = computed(() => isLargeScreen.value ? md.render(t('where.description')) : md.render(t('where.description').split('\n\n')[0]))
-const tail = md.render(t('where.description').split('\n\n').pop() as string)
+const tail = computed(() => md.render(t('where.description').split('\n\n').pop() as string))
 </script>
 
 <template>

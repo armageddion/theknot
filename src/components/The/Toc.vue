@@ -17,6 +17,8 @@ watchEffect(() => {
   const wh = window.innerHeight
   Object.entries(bounding.value)
     .forEach(([key, el]) => {
+      if (!el)
+        return
       const bounds = getBoundsOffset(el, wh)
       const offset = 1 - clamp(Math.abs(bounds), 0, 1)
       const swipe = (1 - bounds - 1) * 100

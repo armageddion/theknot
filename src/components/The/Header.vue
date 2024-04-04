@@ -25,18 +25,19 @@ watchEffect(() => {
 })
 
 // enable disable body scroll when interacting with nav
-onClickOutside(aside, () => toggleLenis(false))
+onClickOutside(aside, () => toggleLenis(true))
 function onMousedown() {
-  toggleLenis(false)
+  if (!isLargeScreen.value)
+    toggleLenis(false)
 }
 function scrollTo(href: string) {
   toggleLenis(true)
   goTo(href)
 }
-function toggleLenis(value: boolean) {
-  isLocked.value = !value
-  if (value)
-    lenis.value?.start()
+function toggleLenis(enabled: boolean) {
+  isLocked.value = !enabled
+  if (enabled)
+    lenis.value?.isStopped && lenis.value.start()
   else
     lenis.value?.stop()
 }
@@ -66,31 +67,9 @@ async function toggleLocales() {
   >
     <template v-if="!isLargeScreen">
       <nav ref="nav" w-full flex items-center overflow-auto>
-        <ul w-full flex px-4>
+        <ul w-max flex pl-5 pr-12>
           <li v-for="link in links" :key="link.href">
-            <a
-              relative block py-1
-              @click="scrollTo(link.href)"
-            >
-              <!-- wrap text in svg to clip path with color -->
-              <!-- <svg
-                h-full w-full
-                viewBox="0 0 20 100"
-              >
-                <defs>
-                  <clipPath id="clip-path">
-                    <text
-                      x="50" y="10" dominant-baseline="middle" text-anchor="middle"
-                      font-size="1em" font-family="sans-serif"
-                    >{{ t(`${link.key}.toc`) }}</text>
-                  </clipPath>
-                </defs>
-                <rect
-                  x="0" y="0" width="100" height="20"
-                  fill="currentColor" clip-path="url(#clip-path)"
-                />
-              </svg> -->
-
+            <a relative block py-1 @click="scrollTo(link.href)">
               <h3
                 min-content relative z-1 px-3 text-nowrap text-sm opacity-75
                 :class="{ 'text-secondary': isActive(link.key) }"

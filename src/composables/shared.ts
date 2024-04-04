@@ -10,7 +10,7 @@ export const useLargeScreen = createGlobalState(() => useMediaQuery(`(min-width:
 
 export function getBoundsOffset(el: UseElementBoundingReturn, height: number) {
   // 0 at the mid, +/-1 at top and bot
-  return (el.top.value + el.height.value / 2 - height / 2) / (el.height.value * 2)
+  return (el?.top.value + el?.height.value / 2 - height / 2) / (el?.height.value * 2)
 }
 
 export function goTo(href: string) {
