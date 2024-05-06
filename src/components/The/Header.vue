@@ -94,7 +94,7 @@ async function toggleLocales() {
         :title="t('button.toggle_langs')"
         @click="toggleLocales()"
       >
-        <div i-ph:translate transition-opacity duration-200 parent-hover:opacity-50 />
+        <div i-ph:translate transition-opacity duration-200 parent-hover:opacity-10 />
         <span
           absolute left-0 top-0 w-full text-center opacity-0 transition-opacity duration-200
           parent-active:opacity-100 parent-hover:opacity-100

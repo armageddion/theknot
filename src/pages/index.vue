@@ -25,6 +25,7 @@ provide('bounding', bounding)
 <template>
   <TheHeader />
   <TheToc v-if="isLargeScreen" />
+  <TheSticky />
   <TheHero id="top" p-4 />
   <div
     grid auto-rows-auto grid-cols-8 w-full gap-2 overflow-hidden
