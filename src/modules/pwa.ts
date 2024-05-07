@@ -5,6 +5,10 @@ export const install: UserModule = ({ isClient, router }) => {
   if (!isClient)
     return
 
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault()
+  })
+
   router.isReady()
     .then(async () => {
       const { registerSW } = await import('virtual:pwa-register')
